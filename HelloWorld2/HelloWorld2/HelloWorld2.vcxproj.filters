@@ -233,5 +233,8 @@
     <ClCompile Include="vertices_parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ft_atof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ft_atof.c" />
     <ClCompile Include="get_next_line.c" />
     <ClCompile Include="libft\ft_atoi.c" />
     <ClCompile Include="libft\ft_bzero.c" />
