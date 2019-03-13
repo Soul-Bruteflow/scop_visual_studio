@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{d7987dfd-f506-4950-afe0-43046dce49b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="get_next_line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libft\includes\libft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="triangle_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="get_next_line.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_atoi.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_bzero.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_count_words.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_count_words_size.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isalnum.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isalpha.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isascii.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isblank.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isdigit.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isprint.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_isspace.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_itoa.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstadd.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstdel.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstdelone.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstiter.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstmap.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_lstnew.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memalloc.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memccpy.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memchr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memcmp.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memcpy.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memdel.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memmove.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_memset.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_overlapn.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putchar.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putchar_fd.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putendl.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putendl_fd.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putnbr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putnbr_fd.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putstr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_putstr_fd.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strcat.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strchr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strclr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strcmp.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strcpy.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strdel.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strdup.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strequ.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_striter.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_striteri.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strjoin.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strlcat.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strlen.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strmap.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strmapi.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strncat.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strncmp.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strncpy.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strnequ.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strnew.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strnstr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strrchr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strsplit.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strstr.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strsub.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_strtrim.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_tolower.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libft\ft_toupper.c">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="obj_parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertices_parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

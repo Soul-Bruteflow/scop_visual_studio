@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{72558B33-765B-4173-9EC6-4146D1DC1CFC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HelloWorld2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\_projects\tools\_ExternalLibs\SDL2\include;E:\_projects\tools\_ExternalLibs\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>E:\_projects\tools\_ExternalLibs\glew\lib\Release\Win32;E:\_projects\tools\_ExternalLibs\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\_projects\tools\_ExternalLibs\SDL2\include;E:\_projects\tools\_ExternalLibs\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>E:\_projects\tools\_ExternalLibs\glew\lib\Release\Win32;E:\_projects\tools\_ExternalLibs\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="get_next_line.c" />
+    <ClCompile Include="libft\ft_atoi.c" />
+    <ClCompile Include="libft\ft_bzero.c" />
+    <ClCompile Include="libft\ft_count_words.c" />
+    <ClCompile Include="libft\ft_count_words_size.c" />
+    <ClCompile Include="libft\ft_isalnum.c" />
+    <ClCompile Include="libft\ft_isalpha.c" />
+    <ClCompile Include="libft\ft_isascii.c" />
+    <ClCompile Include="libft\ft_isblank.c" />
+    <ClCompile Include="libft\ft_isdigit.c" />
+    <ClCompile Include="libft\ft_isprint.c" />
+    <ClCompile Include="libft\ft_isspace.c" />
+    <ClCompile Include="libft\ft_itoa.c" />
+    <ClCompile Include="libft\ft_lstadd.c" />
+    <ClCompile Include="libft\ft_lstdel.c" />
+    <ClCompile Include="libft\ft_lstdelone.c" />
+    <ClCompile Include="libft\ft_lstiter.c" />
+    <ClCompile Include="libft\ft_lstmap.c" />
+    <ClCompile Include="libft\ft_lstnew.c" />
+    <ClCompile Include="libft\ft_memalloc.c" />
+    <ClCompile Include="libft\ft_memccpy.c" />
+    <ClCompile Include="libft\ft_memchr.c" />
+    <ClCompile Include="libft\ft_memcmp.c" />
+    <ClCompile Include="libft\ft_memcpy.c" />
+    <ClCompile Include="libft\ft_memdel.c" />
+    <ClCompile Include="libft\ft_memmove.c" />
+    <ClCompile Include="libft\ft_memset.c" />
+    <ClCompile Include="libft\ft_overlapn.c" />
+    <ClCompile Include="libft\ft_putchar.c" />
+    <ClCompile Include="libft\ft_putchar_fd.c" />
+    <ClCompile Include="libft\ft_putendl.c" />
+    <ClCompile Include="libft\ft_putendl_fd.c" />
+    <ClCompile Include="libft\ft_putnbr.c" />
+    <ClCompile Include="libft\ft_putnbr_fd.c" />
+    <ClCompile Include="libft\ft_putstr.c" />
+    <ClCompile Include="libft\ft_putstr_fd.c" />
+    <ClCompile Include="libft\ft_strcat.c" />
+    <ClCompile Include="libft\ft_strchr.c" />
+    <ClCompile Include="libft\ft_strclr.c" />
+    <ClCompile Include="libft\ft_strcmp.c" />
+    <ClCompile Include="libft\ft_strcpy.c" />
+    <ClCompile Include="libft\ft_strdel.c" />
+    <ClCompile Include="libft\ft_strdup.c" />
+    <ClCompile Include="libft\ft_strequ.c" />
+    <ClCompile Include="libft\ft_striter.c" />
+    <ClCompile Include="libft\ft_striteri.c" />
+    <ClCompile Include="libft\ft_strjoin.c" />
+    <ClCompile Include="libft\ft_strlcat.c" />
+    <ClCompile Include="libft\ft_strlen.c" />
+    <ClCompile Include="libft\ft_strmap.c" />
+    <ClCompile Include="libft\ft_strmapi.c" />
+    <ClCompile Include="libft\ft_strncat.c" />
+    <ClCompile Include="libft\ft_strncmp.c" />
+    <ClCompile Include="libft\ft_strncpy.c" />
+    <ClCompile Include="libft\ft_strnequ.c" />
+    <ClCompile Include="libft\ft_strnew.c" />
+    <ClCompile Include="libft\ft_strnstr.c" />
+    <ClCompile Include="libft\ft_strrchr.c" />
+    <ClCompile Include="libft\ft_strsplit.c" />
+    <ClCompile Include="libft\ft_strstr.c" />
+    <ClCompile Include="libft\ft_strsub.c" />
+    <ClCompile Include="libft\ft_strtrim.c" />
+    <ClCompile Include="libft\ft_tolower.c" />
+    <ClCompile Include="libft\ft_toupper.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="obj_parser.c" />
+    <ClCompile Include="triangle_main.c" />
+    <ClCompile Include="vertices_parser.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="get_next_line.h" />
+    <ClInclude Include="libft\includes\libft.h" />
+    <ClInclude Include="scop.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
