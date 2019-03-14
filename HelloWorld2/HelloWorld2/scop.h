@@ -25,8 +25,10 @@ typedef struct			s_scop
 {
 	SDL_Window			*sld_win;
 	char				*obj_file_name;
-	unsigned int		vetrex_count;
+	unsigned int		vertices_count;
+	unsigned int		indices_count;
 	float				*vertices;
+	unsigned int		*indices;
 	int					i;
 }						t_scop;
 
@@ -45,9 +47,14 @@ t_scop					*init_scop();
 ** Parser
 */
 void					obj_pars_main(t_scop *scop);
-void					vertecies_pars(t_scop *scop);
-void					count_vertices(t_scop *scop);
-void					allocate_vetrex_mem(t_scop *scop);
-void					write_vertices(t_scop *scop);
+int						is_obj(t_scop *scop);
+void					vertices_pars(t_scop *scop);
+void					vertices_count(t_scop *scop);
+void					vertices_allocate_mem(t_scop *scop);
+void					vertices_write(t_scop *scop);
+void					indices_pars(t_scop *scop);
+void					indices_count(t_scop *scop);
+void					indices_allocate_mem(t_scop *scop);
+void					indices_write(t_scop *scop);
 
 #endif
