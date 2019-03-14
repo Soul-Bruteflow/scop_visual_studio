@@ -145,8 +145,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="clean.c" />
+    <ClCompile Include="ft_2d_str_count.c" />
     <ClCompile Include="ft_atof.c" />
     <ClCompile Include="get_next_line.c" />
+    <ClCompile Include="init.c" />
     <ClCompile Include="libft\ft_atoi.c" />
     <ClCompile Include="libft\ft_bzero.c" />
     <ClCompile Include="libft\ft_count_words.c" />
@@ -211,9 +214,10 @@
     <ClCompile Include="libft\ft_tolower.c" />
     <ClCompile Include="libft\ft_toupper.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="obj_parser.c" />
+    <ClCompile Include="parser_indices.c" />
+    <ClCompile Include="parser_main.c" />
     <ClCompile Include="triangle_main.c" />
-    <ClCompile Include="vertices_parser.c" />
+    <ClCompile Include="parser_vertices.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="get_next_line.h" />

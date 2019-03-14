@@ -7,16 +7,12 @@ int				main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		scop = init_scop();
+		if (init_sdl_gl(scop) == -1)
+			return (0);
+		init_open_gl_attributes();
 		scop->obj_file_name = argv[1];
 		obj_pars_main(scop);
 	}
+	cleanup_sdl(scop);
 	return (0);
-}
-
-t_scop			*init_scop()
-{
-	t_scop		*tmp;
-	
-	tmp = malloc(sizeof(t_scop));
-	return (tmp);
 }

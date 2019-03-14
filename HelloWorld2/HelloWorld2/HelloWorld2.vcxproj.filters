@@ -29,9 +29,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="triangle_main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -227,13 +224,28 @@
     <ClCompile Include="libft\ft_toupper.c">
       <Filter>libs</Filter>
     </ClCompile>
-    <ClCompile Include="obj_parser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vertices_parser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ft_atof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser_vertices.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser_indices.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle_main.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_2d_str_count.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clean.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
