@@ -13,6 +13,10 @@ int				main(int argc, char *argv[])
 		scop->obj_file_name = argv[1];
 		obj_pars_main(scop);
 		load_shaders(scop);
+		main_vertex_data(scop);
+		glClearColor(0.0, 0.0, 0.0, 1.0);
+		glClear(GL_COLOR_BUFFER_BIT);
+		SDL_GL_SwapWindow(scop->main_window);
 		main_loop(scop);
 	}
 	cleanup_sdl(scop);

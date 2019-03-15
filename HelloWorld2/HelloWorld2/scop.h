@@ -46,6 +46,9 @@ typedef struct			s_scop
 	int					shader_program;
 	char				*vertex_shdr_src;
 	char				*fragment_shdr_src;
+	unsigned int		vbo;
+	unsigned int		ebo;
+	unsigned int		vao;
 }						t_scop;
 
 /*
@@ -98,5 +101,16 @@ void					build_shaders(t_scop *scop);
 void					print_error(unsigned int shader, char *log);
 void					compile_shader(int shader);
 void					remove_trailing_comment(char *shader_source);
+
+/*
+** Render
+*/
+void					main_render(t_scop *scop);
+
+/*
+** Vertext data
+*/
+void					main_vertex_data(t_scop *scop);
+void					set_up_vertex_data(t_scop *scop);
 
 #endif

@@ -13,6 +13,7 @@ void	main_loop(t_scop *scop)
 				quit = -1;
 			quit = key_down(scop);
 		}
+		main_render(scop);
 	}
 }
 

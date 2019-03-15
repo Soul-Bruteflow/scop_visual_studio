@@ -7,7 +7,6 @@ void	load_shaders(t_scop *scop)
 	remove_trailing_comment(scop->vertex_shdr_src);
 	remove_trailing_comment(scop->fragment_shdr_src);
 	build_shaders(scop);
-	//printf("%s\n\n", scop->vertex_shdr_src);
 }
 
 char	*parser_shader(const char *file_path)
