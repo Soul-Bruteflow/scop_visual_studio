@@ -7,12 +7,12 @@ void		obj_pars_main(t_scop *scop)
 	vertices_pars(scop);
 	indices_pars(scop);
 	
-	unsigned int i = 0;
-	while (i < scop->indices_count * 3)
-	{
-		printf("%u\n", scop->indices[i]);
-		i++;
-	}
+	//unsigned int i = 0;
+	//while (i < scop->indices_count * 3)
+	//{
+	//	printf("%u\n", scop->indices[i]);
+	//	i++;
+	//}
 }
 
 int			is_obj(t_scop *scop)

@@ -12,6 +12,8 @@ int				main(int argc, char *argv[])
 		init_open_gl_attributes();
 		scop->obj_file_name = argv[1];
 		obj_pars_main(scop);
+		load_shaders(scop);
+		main_loop(scop);
 	}
 	cleanup_sdl(scop);
 	return (0);

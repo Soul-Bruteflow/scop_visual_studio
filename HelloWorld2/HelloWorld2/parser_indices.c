@@ -58,19 +58,19 @@ void		indices_write(t_scop *scop)
 
 void		indices_write_three(t_scop *scop, char	**splited_values)
 {
-	scop->indices[scop->i + 0] = ft_atoi(splited_values[0]);
-	scop->indices[scop->i + 1] = ft_atoi(splited_values[1]);
-	scop->indices[scop->i + 2] = ft_atoi(splited_values[2]);
+	scop->indices[scop->i + 0] = (ft_atoi(splited_values[0]) - 1);
+	scop->indices[scop->i + 1] = (ft_atoi(splited_values[1]) - 1);
+	scop->indices[scop->i + 2] = (ft_atoi(splited_values[2]) - 1);
 	scop->i += 3;
 }
 
 void		indices_write_four(t_scop *scop, char	**splited_values)
 {
-	scop->indices[scop->i + 0] = ft_atoi(splited_values[0]);
-	scop->indices[scop->i + 1] = ft_atoi(splited_values[1]);
-	scop->indices[scop->i + 2] = ft_atoi(splited_values[2]);
-	scop->indices[scop->i + 3] = ft_atoi(splited_values[0]);
-	scop->indices[scop->i + 4] = ft_atoi(splited_values[2]);
-	scop->indices[scop->i + 5] = ft_atoi(splited_values[3]);
+	scop->indices[scop->i + 0] = (ft_atoi(splited_values[0]) - 1);
+	scop->indices[scop->i + 1] = (ft_atoi(splited_values[1]) - 1);
+	scop->indices[scop->i + 2] = (ft_atoi(splited_values[2]) - 1);
+	scop->indices[scop->i + 3] = (ft_atoi(splited_values[0]) - 1);
+	scop->indices[scop->i + 4] = (ft_atoi(splited_values[2]) - 1);
+	scop->indices[scop->i + 5] = (ft_atoi(splited_values[3]) - 1);
 	scop->i += 6;
 }

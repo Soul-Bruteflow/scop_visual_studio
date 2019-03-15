@@ -24,6 +24,8 @@
 # define WINX			800
 # define WINY			600
 # define WINNAME		"scop"
+# define VERT_PATH		"shader_vertex.glsl"
+# define FRAG_PATH		"shader_fragment.glsl"
 
 /*
 ** Main data structure
@@ -32,12 +34,18 @@ typedef struct			s_scop
 {
 	SDL_Window			*main_window;
 	SDL_GLContext		main_context;
+	SDL_Event			event;
 	char				*obj_file_name;
 	unsigned int		vertices_count;
 	unsigned int		indices_count;
 	float				*vertices;
 	unsigned int		*indices;
 	int					i;
+	int					vertex_shader;
+	int					fragment_shader;
+	int					shader_program;
+	char				*vertex_shdr_src;
+	char				*fragment_shdr_src;
 }						t_scop;
 
 /*
@@ -74,5 +82,21 @@ void					indices_allocate_mem(t_scop *scop);
 void					indices_write(t_scop *scop);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
+
+/*
+** Main program loop
+*/
+void					main_loop(t_scop *scop);
+int						key_down(t_scop *scop);
+
+/*
+** Shaders
+*/
+void					load_shaders(t_scop *scop);
+char					*parser_shader(const char *file_path);
+void					build_shaders(t_scop *scop);
+void					print_error(unsigned int shader, char *log);
+void					compile_shader(int shader);
+void					remove_trailing_comment(char *shader_source);
 
 #endif

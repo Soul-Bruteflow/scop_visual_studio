@@ -214,6 +214,9 @@
     <ClCompile Include="libft\ft_tolower.c" />
     <ClCompile Include="libft\ft_toupper.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="main_errors.c" />
+    <ClCompile Include="main_loop.c" />
+    <ClCompile Include="main_shader.c" />
     <ClCompile Include="parser_indices.c" />
     <ClCompile Include="parser_main.c" />
     <ClCompile Include="triangle_main.c" />
@@ -223,6 +226,10 @@
     <ClInclude Include="get_next_line.h" />
     <ClInclude Include="libft\includes\libft.h" />
     <ClInclude Include="scop.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader_fragment.glsl" />
+    <None Include="shader_vertex.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

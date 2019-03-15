@@ -248,5 +248,22 @@
     <ClCompile Include="clean.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_loop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_shader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_errors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader_vertex.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="shader_fragment.glsl">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

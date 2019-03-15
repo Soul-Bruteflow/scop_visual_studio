@@ -16,7 +16,7 @@ int				init_sdl_gl(t_scop *scop)
 						SDL_WINDOWPOS_CENTERED, WINX, WINY, SDL_WINDOW_OPENGL);
 	if (!scop->main_window)
 		return (-1);
-	scop->main_context = SDL_GL_CreateContext(scop->main_context);
+	scop->main_context = SDL_GL_CreateContext(scop->main_window);
 	init_open_gl_attributes();
 	SDL_GL_SetSwapInterval(1);
 	glewExperimental = GL_TRUE;
