@@ -223,6 +223,8 @@
     <ClCompile Include="parser_main.c" />
     <ClCompile Include="triangle_main.c" />
     <ClCompile Include="parser_vertices.c" />
+    <ClCompile Include="vector_math_1.c" />
+    <ClCompile Include="vector_math_2.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="get_next_line.h" />

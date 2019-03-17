@@ -263,6 +263,12 @@
     <ClCompile Include="main_vertex_data.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="vector_math_1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector_math_2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_vertex.glsl">

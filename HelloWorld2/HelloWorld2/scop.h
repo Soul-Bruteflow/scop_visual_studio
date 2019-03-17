@@ -28,6 +28,29 @@
 # define FRAG_PATH		"shader_fragment.glsl"
 
 /*
+** Math structs
+*/
+typedef struct			s_mat4
+{
+	float				m[4][4];
+}						t_mat4;
+
+typedef struct			s_vec3
+{
+	float				x;
+	float				y;
+	float				z;
+}						t_vec3;
+
+typedef struct			s_vec4
+{
+	float				x;
+	float				y;
+	float				z;
+	float				w;
+}						t_vec4;
+
+/*
 ** Main data structure
 */
 typedef struct			s_scop
@@ -112,5 +135,16 @@ void					main_render(t_scop *scop);
 */
 void					main_vertex_data(t_scop *scop);
 void					set_up_vertex_data(t_scop *scop);
+
+/*
+** Vector math
+*/
+t_vec3					vec3_set(float x, float y, float z);
+float					vec3_magnitude(t_vec3 v);
+t_vec3					vec3_normalize(t_vec3 v);
+t_vec3					vec3_sub(t_vec3 v1, t_vec3 v2);
+t_vec3					vec3_add(t_vec3 v1, t_vec3 v2);
+t_vec3					vec3_cross(t_vec3 v1, t_vec3 v2);
+float					vec3_dot(t_vec3 v1, t_vec3 v2);
 
 #endif
