@@ -216,9 +216,11 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="main_errors.c" />
     <ClCompile Include="main_loop.c" />
+    <ClCompile Include="main_matrix.c" />
     <ClCompile Include="main_render.c" />
     <ClCompile Include="main_shader.c" />
     <ClCompile Include="main_vertex_data.c" />
+    <ClCompile Include="matrix_math_1.c" />
     <ClCompile Include="parser_indices.c" />
     <ClCompile Include="parser_main.c" />
     <ClCompile Include="triangle_main.c" />
