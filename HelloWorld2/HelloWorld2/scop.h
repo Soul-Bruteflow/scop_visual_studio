@@ -75,8 +75,14 @@ typedef struct			s_scop
 	t_vec3				up;
 	t_vec3				eye;
 	t_vec3				center;
-	t_mat4				camera;
-	int					camera_id;
+	t_mat4				view;
+	int					view_id;
+	t_mat4				proj;
+	int					proj_id;
+	float				fov;
+	float				near;
+	float				far;
+	float				asp;
 }						t_scop;
 
 /*
@@ -156,9 +162,11 @@ float					vec3_dot(t_vec3 v1, t_vec3 v2);
 ** Matrix
 */
 void					main_matrix(t_scop *scop);
-void					set_camera(t_scop *scop);
+void					set_view(t_scop *scop);
+void					set_projection(t_scop *scop);
 t_mat4					mat_build_view(t_vec3 eye, t_vec3 center, t_vec3 up);
 t_mat4					set_view_help(t_vec3 x, t_vec3 y, t_vec3 z, t_vec3 e);
-t_mat4					mat_build_persp(float f, float a, float n, float far);
+t_mat4					mat_build_proj(float f, float a, float n, float far);
+t_mat4					mat_init(float val);
 
 #endif

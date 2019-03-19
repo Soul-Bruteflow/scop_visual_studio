@@ -34,4 +34,6 @@ void			init_open_gl_attributes()
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+	//glEnable(GL_DEPTH_TEST);
+	//glDepthFunc(GL_LESS);
 }
