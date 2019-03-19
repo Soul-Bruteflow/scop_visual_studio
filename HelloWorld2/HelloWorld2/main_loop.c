@@ -22,7 +22,8 @@ int		key_down(t_scop *scop)
 	if (scop->event.type == SDL_KEYDOWN)
 	{
 		if (scop->event.key.keysym.sym == SDLK_ESCAPE)
-		return (-1);
+			return (-1);
+		else if (scop->event.key.keysym.sym == SDLK_ESCAPE)
 	}
 	return (0);
 }

@@ -221,6 +221,7 @@
     <ClCompile Include="main_shader.c" />
     <ClCompile Include="main_vertex_data.c" />
     <ClCompile Include="matrix_math_1.c" />
+    <ClCompile Include="matrix_math_2.c" />
     <ClCompile Include="parser_indices.c" />
     <ClCompile Include="parser_main.c" />
     <ClCompile Include="triangle_main.c" />

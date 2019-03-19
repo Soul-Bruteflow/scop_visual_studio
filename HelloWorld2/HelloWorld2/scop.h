@@ -161,6 +161,7 @@ float					vec3_dot(t_vec3 v1, t_vec3 v2);
 /*
 ** Matrix
 */
+t_mat4					mat_set_identity();
 void					main_matrix(t_scop *scop);
 void					set_view(t_scop *scop);
 void					set_projection(t_scop *scop);

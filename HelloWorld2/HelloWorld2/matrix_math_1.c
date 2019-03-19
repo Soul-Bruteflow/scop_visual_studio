@@ -77,3 +77,14 @@ t_mat4		mat_init(float val)
 	result.m[3][3] = val;
 	return (result);
 }
+
+t_mat4		mat_set_identity()
+{
+	t_mat4	result;
+
+	result = mat_init(0);
+	result.m[0][0] = 1;
+	result.m[1][1] = 1;
+	result.m[2][2] = 1;
+	result.m[3][3] = 1;
+}
