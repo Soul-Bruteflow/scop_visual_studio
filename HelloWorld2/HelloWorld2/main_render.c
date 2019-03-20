@@ -10,6 +10,8 @@ void	main_render(t_scop *scop)
 	glUniformMatrix4fv(scop->scale_id, 1, GL_FALSE, scop->scale.m);
 	scop->trans_id = glGetUniformLocation(scop->shader_program, "translate");
 	glUniformMatrix4fv(scop->trans_id, 1, GL_FALSE, scop->translate.m);
+	scop->rotate_id = glGetUniformLocation(scop->shader_program, "rotate");
+	glUniformMatrix4fv(scop->rotate_id, 1, GL_FALSE, scop->rotate.m);
 	glBindVertexArray(scop->vao);
 	glDrawElements(GL_TRIANGLES, scop->indices_count * 3, GL_UNSIGNED_INT, 0);
 	SDL_GL_SwapWindow(scop->main_window);

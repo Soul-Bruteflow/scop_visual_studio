@@ -91,6 +91,9 @@ typedef struct			s_scop
 	t_mat4				translate;
 	int					scale_id;
 	int					trans_id;
+	t_mat4				rotate;
+	int					rotate_id;
+	float				rotate_x;
 }						t_scop;
 
 /*
@@ -180,7 +183,7 @@ t_mat4					mat_init(float val);
 void					set_model(t_scop *scop);
 t_mat4					mat_scale(float f);
 t_mat4					mat_translate(t_vec3 v);
-t_mat4					mat_mult(t_mat4 m1, t_mat4 m2);
+t_mat4					mat_rotate(float angle, t_vec3 axis);
 
 /*
 ** Key function | scale
@@ -189,5 +192,7 @@ void					init_key(t_scop *scop);
 void					scale_mesh(t_scop *scop);
 void					translate_mesh(t_scop *scop);
 float					translate_move(float base_value, int flag);
+t_mat4					mat_set_rotate(float c, float s, t_vec3 axis);
+void					rotate_x(t_scop *scop);
 
 #endif
