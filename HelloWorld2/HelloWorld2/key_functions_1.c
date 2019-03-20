@@ -5,6 +5,9 @@ void	init_key(t_scop *scop)
 	scop->scale_factor = 1.0f;
 	scop->translate_factor = vec3_set(0.0f, 0.0f, 0.0f);
 	scop->rotate_x = 0.0f;
+	scop->min = vec3_set(0.0f, 0.0f, 0.0f);
+	scop->max = vec3_set(0.0f, 0.0f, 0.0f);
+	scop->object_center = vec3_set(0.0f, 0.0f, 0.0f);
 }
 
 void	scale_mesh(t_scop *scop)

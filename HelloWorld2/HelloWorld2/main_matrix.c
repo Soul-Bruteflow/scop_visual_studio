@@ -16,7 +16,7 @@ void		set_view(t_scop *scop)
 {
 	scop->up = vec3_set(0.0f, 1.0f, 0.0f);
 	scop->center = vec3_set(0.0f, 0.0f, 0.0f);
-	scop->eye = vec3_set(3.0f, 3.0f, 3.0f);
+	scop->eye = vec3_set(0.0f, 0.0f, -10.0f);
 	scop->view = mat_build_view(scop->eye, scop->center, scop->up);
 }
 

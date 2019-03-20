@@ -94,6 +94,14 @@ typedef struct			s_scop
 	t_mat4				rotate;
 	int					rotate_id;
 	float				rotate_x;
+	t_vec3				min;
+	t_vec3				max;
+	t_vec3				object_center;
+	t_vec3				object_back;
+	t_mat4				translate_cent;
+	t_mat4				translate_back;
+	int					translate_cent_id;
+	int					translate_back_id;
 }						t_scop;
 
 /*
@@ -130,6 +138,7 @@ void					indices_allocate_mem(t_scop *scop);
 void					indices_write(t_scop *scop);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
+void					find_min_max(t_scop *scop);
 
 /*
 ** Main program loop
