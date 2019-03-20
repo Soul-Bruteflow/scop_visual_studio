@@ -87,4 +87,5 @@ t_mat4		mat_set_identity()
 	result.m[1][1] = 1;
 	result.m[2][2] = 1;
 	result.m[3][3] = 1;
+	return (result);
 }

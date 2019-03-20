@@ -83,6 +83,14 @@ typedef struct			s_scop
 	float				near;
 	float				far;
 	float				asp;
+	float				scale_factor;
+	t_mat4				model;
+	int					model_id;
+	t_vec3				translate_factor;
+	t_mat4				scale;
+	t_mat4				translate;
+	int					scale_id;
+	int					trans_id;
 }						t_scop;
 
 /*
@@ -169,5 +177,17 @@ t_mat4					mat_build_view(t_vec3 eye, t_vec3 center, t_vec3 up);
 t_mat4					set_view_help(t_vec3 x, t_vec3 y, t_vec3 z, t_vec3 e);
 t_mat4					mat_build_proj(float f, float a, float n, float far);
 t_mat4					mat_init(float val);
+void					set_model(t_scop *scop);
+t_mat4					mat_scale(float f);
+t_mat4					mat_translate(t_vec3 v);
+t_mat4					mat_mult(t_mat4 m1, t_mat4 m2);
+
+/*
+** Key function | scale
+*/
+void					init_key(t_scop *scop);
+void					scale_mesh(t_scop *scop);
+void					translate_mesh(t_scop *scop);
+float					translate_move(float base_value, int flag);
 
 #endif

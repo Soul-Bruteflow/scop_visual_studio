@@ -23,7 +23,8 @@ int		key_down(t_scop *scop)
 	{
 		if (scop->event.key.keysym.sym == SDLK_ESCAPE)
 			return (-1);
-		else if (scop->event.key.keysym.sym == SDLK_ESCAPE)
+		scale_mesh(scop);
+		translate_mesh(scop);
 	}
 	return (0);
 }
