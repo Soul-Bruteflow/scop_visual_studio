@@ -6,12 +6,22 @@ void		set_model(t_scop *scop)
 	t_mat4	translate;
 
 	scop->scale = mat_scale(scop->scale_factor);
-	scop->translate = mat_translate(scop->translate_factor);
+	scop->translate = mat_translate(scop->translate_fac);
 	scop->translate_cent = mat_translate(scop->object_center);
 	scop->translate_back = mat_translate(scop->object_back);
-	scop->rotate_x = mat_rotate(scop->rotate_x_factor, vec3_set(0.0f, 1.0f, 0.0f));
-	scop->rotate_y = mat_rotate(scop->rotate_y_factor, vec3_set(1.0f, 0.0f, 0.0f));
-	scop->rotate_z = mat_rotate(scop->rotate_z_factor, vec3_set(0.0f, 0.0f, 1.0f));
+	if (scop->enable_rotate == 1)
+		scop->rotate_x = mat_rotate(scop->rot_a_fac, vec3_set(0.0f, 1.0f, 0.0f));
+	else if (scop->enable_rotate == -1)
+	{
+		if (scop->copy_auto == 1)
+		{
+			scop->rot_x_fac = scop->rot_a_fac;
+			scop->copy_auto = -1;
+		}
+		scop->rotate_x = mat_rotate(scop->rot_x_fac, vec3_set(0.0f, 1.0f, 0.0f));
+	}
+	scop->rotate_y = mat_rotate(scop->rot_y_fac, vec3_set(1.0f, 0.0f, 0.0f));
+	scop->rotate_z = mat_rotate(scop->rot_z_fac, vec3_set(0.0f, 0.0f, 1.0f));
 }
 
 t_mat4		mat_scale(float scale_factor)

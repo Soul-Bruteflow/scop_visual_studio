@@ -86,7 +86,7 @@ typedef struct			s_scop
 	float				scale_factor;
 	t_mat4				model;
 	int					model_id;
-	t_vec3				translate_factor;
+	t_vec3				translate_fac;
 	t_mat4				scale;
 	t_mat4				translate;
 	int					scale_id;
@@ -94,12 +94,15 @@ typedef struct			s_scop
 	t_mat4				rotate_x;
 	t_mat4				rotate_y;
 	t_mat4				rotate_z;
+	t_mat4				rotate_a;
+	int					rotate_a_id;
 	int					rotate_x_id;
 	int					rotate_y_id;
 	int					rotate_z_id;
-	float				rotate_x_factor;
-	float				rotate_y_factor;
-	float				rotate_z_factor;
+	float				rot_x_fac;
+	float				rot_y_fac;
+	float				rot_z_fac;
+	float				rot_a_fac;
 	t_vec3				min;
 	t_vec3				max;
 	t_vec3				object_center;
@@ -108,6 +111,12 @@ typedef struct			s_scop
 	t_mat4				translate_back;
 	int					translate_cent_id;
 	int					translate_back_id;
+	int					enable_rotate;
+	double				time;
+	double				old_time;
+	double				delta;
+	int					copy_auto;
+	int					copy_auto2;
 }						t_scop;
 
 /*
@@ -211,5 +220,6 @@ t_mat4					mat_set_rotate(float c, float s, t_vec3 axis);
 void					rotate_x(t_scop *scop);
 void					rotate_y(t_scop *scop);
 void					rotate_z(t_scop *scop);
+void					auto_rotate(t_scop *scop);
 
 #endif
