@@ -26,6 +26,8 @@ int		key_down(t_scop *scop)
 		scale_mesh(scop);
 		translate_mesh(scop);
 		rotate_x(scop);
+		rotate_y(scop);
+		rotate_z(scop);
 	}
 	return (0);
 }

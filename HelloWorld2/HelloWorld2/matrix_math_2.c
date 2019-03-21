@@ -9,8 +9,9 @@ void		set_model(t_scop *scop)
 	scop->translate = mat_translate(scop->translate_factor);
 	scop->translate_cent = mat_translate(scop->object_center);
 	scop->translate_back = mat_translate(scop->object_back);
-	scop->rotate = mat_rotate(scop->rotate_x, vec3_set(0.0f, 1.0f, 0.0f));
-	//scop->model = mat_scale(scop->scale_factor);
+	scop->rotate_x = mat_rotate(scop->rotate_x_factor, vec3_set(0.0f, 1.0f, 0.0f));
+	scop->rotate_y = mat_rotate(scop->rotate_y_factor, vec3_set(1.0f, 0.0f, 0.0f));
+	scop->rotate_z = mat_rotate(scop->rotate_z_factor, vec3_set(0.0f, 0.0f, 1.0f));
 }
 
 t_mat4		mat_scale(float scale_factor)

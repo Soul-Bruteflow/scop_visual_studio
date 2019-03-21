@@ -4,10 +4,13 @@ void	init_key(t_scop *scop)
 {
 	scop->scale_factor = 1.0f;
 	scop->translate_factor = vec3_set(0.0f, 0.0f, 0.0f);
-	scop->rotate_x = 0.0f;
+	scop->rotate_x_factor = 0.0f;
+	scop->rotate_y_factor = 0.0f;
+	scop->rotate_z_factor = 0.0f;
 	scop->min = vec3_set(0.0f, 0.0f, 0.0f);
 	scop->max = vec3_set(0.0f, 0.0f, 0.0f);
 	scop->object_center = vec3_set(0.0f, 0.0f, 0.0f);
+	scop->object_back = vec3_set(0.0f, 0.0f, 0.0f);
 }
 
 void	scale_mesh(t_scop *scop)
@@ -19,7 +22,7 @@ void	scale_mesh(t_scop *scop)
 			scop->scale_factor = 0.1f;
 			return ;
 		}
-		scop->scale_factor -= 0.01f;
+		scop->scale_factor -= 0.05f;
 	}
 	else if (scop->event.key.keysym.sym == SDLK_EQUALS)
 	{
@@ -28,7 +31,7 @@ void	scale_mesh(t_scop *scop)
 			scop->scale_factor = 5.0f;
 			return ;
 		}
-		scop->scale_factor += 0.01f;
+		scop->scale_factor += 0.05f;
 	}
 }
 
@@ -55,27 +58,4 @@ float	translate_move(float base_value, int flag)
 	if (base_value <= -50.0f && flag == -1)
 		return (0.0f);
 	return (1.0f);
-}
-
-void	rotate_x(t_scop *scop)
-{
-	if (scop->event.key.keysym.sym == SDLK_w)
-	{
-		if (scop->rotate_x == 360.0f)
-		{
-			scop->rotate_x = 1.0f;
-			return;
-		}
-		scop->rotate_x += 1.0f;
-	}
-	if (scop->event.key.keysym.sym == SDLK_s)
-	{
-		if (scop->rotate_x == -360.0f)
-		{
-			scop->rotate_x = -1.0f;
-				return;
-		}
-		scop->rotate_x -= 1.0f;
-	}
-	printf("%f\n", scop->rotate_x);
 }

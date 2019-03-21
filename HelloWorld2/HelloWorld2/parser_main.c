@@ -38,49 +38,27 @@ void		indices_pars(t_scop *scop)
 
 void		find_min_max(t_scop *scop)
 {
-	unsigned int i;
-	t_vec3 p;
-
-	i = 0;
-	while (i < scop->vertices_count * 3)
+	scop->i = 0;
+	while (scop->i < scop->vertices_count * 3)
 	{
-		if (scop->vertices[i + 0] < scop->min.x)
-			scop->min.x = scop->vertices[i + 0];
-		if (scop->vertices[i + 0] > scop->max.x)
-			scop->max.x = scop->vertices[i + 0];
-
-		if (scop->vertices[i + 1] < scop->min.y)
-			scop->min.y = scop->vertices[i + 1];
-		if (scop->vertices[i + 1] > scop->max.y)
-			scop->max.y = scop->vertices[i + 1];
-
-		if (scop->vertices[i + 2] < scop->min.z)
-			scop->min.z = scop->vertices[i + 2];
-		if (scop->vertices[i + 2] > scop->max.z)
-			scop->max.z = scop->vertices[i + 2];
-
-		p.x = (scop->min.x + scop->max.x) / 2.0f;
-		p.y = (scop->min.y + scop->max.y) / 2.0f;
-		p.z = (scop->min.z + scop->max.z) / 2.0f;
-
-		scop->object_center.x += scop->vertices[i + 0];
-		scop->object_center.y += scop->vertices[i + 1];
-		scop->object_center.z += scop->vertices[i + 2];
-		i += 3;
+		if (scop->vertices[scop->i + 0] < scop->min.x)
+			scop->min.x = scop->vertices[scop->i + 0];
+		if (scop->vertices[scop->i + 0] > scop->max.x)
+			scop->max.x = scop->vertices[scop->i + 0];
+		if (scop->vertices[scop->i + 1] < scop->min.y)
+			scop->min.y = scop->vertices[scop->i + 1];
+		if (scop->vertices[scop->i + 1] > scop->max.y)
+			scop->max.y = scop->vertices[scop->i + 1];
+		if (scop->vertices[scop->i + 2] < scop->min.z)
+			scop->min.z = scop->vertices[scop->i + 2];
+		if (scop->vertices[scop->i + 2] > scop->max.z)
+			scop->max.z = scop->vertices[scop->i + 2];
+		scop->i += 3;
 	}
-	scop->object_center.x = p.x;
-	scop->object_center.y = p.y;
-	scop->object_center.z = p.z;
-	scop->object_back.x = -p.x;
-	scop->object_back.y = -p.y;
-	scop->object_back.z = -p.z;
-	printf("x: %f\n", scop->object_back.x);
-	printf("y: %f\n", scop->object_back.y);
-	printf("z: %f\n", scop->object_back.z);
-
-	printf("-------\n");
-
-	printf("x: %f\n", p.x);
-	printf("y: %f\n", p.y);
-	printf("z: %f\n", p.z);
+	scop->object_center.x = -(scop->min.x + scop->max.x) / 2.0f;
+	scop->object_center.y = -(scop->min.y + scop->max.y) / 2.0f;
+	scop->object_center.z = -(scop->min.z + scop->max.z) / 2.0f;
+	scop->object_back.x = (scop->min.x + scop->max.x) / 2.0f;
+	scop->object_back.y = (scop->min.y + scop->max.y) / 2.0f;
+	scop->object_back.z = (scop->min.z + scop->max.z) / 2.0f;
 }

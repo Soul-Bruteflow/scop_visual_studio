@@ -281,6 +281,9 @@
     <ClCompile Include="key_functions_1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="key_functions_2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_vertex.glsl">

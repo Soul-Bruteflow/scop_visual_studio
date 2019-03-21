@@ -16,15 +16,15 @@ void		set_view(t_scop *scop)
 {
 	scop->up = vec3_set(0.0f, 1.0f, 0.0f);
 	scop->center = vec3_set(0.0f, 0.0f, 0.0f);
-	scop->eye = vec3_set(0.0f, 0.0f, -10.0f);
+	scop->eye = vec3_set(0.0f, 0.0f, -7.0f);
 	scop->view = mat_build_view(scop->eye, scop->center, scop->up);
 }
 
 void		set_projection(t_scop *scop)
 {
 	scop->fov = 90.0f;
-	scop->near = 0.1f;
-	scop->far = 20.0f;
+	scop->near = 0.01f;
+	scop->far = 50.0f;
 	scop->asp = WINX / WINY;
 	scop->proj = mat_build_proj(scop->fov, scop->asp, scop->near, scop->far);
 }

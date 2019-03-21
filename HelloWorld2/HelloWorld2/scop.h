@@ -91,9 +91,15 @@ typedef struct			s_scop
 	t_mat4				translate;
 	int					scale_id;
 	int					trans_id;
-	t_mat4				rotate;
-	int					rotate_id;
-	float				rotate_x;
+	t_mat4				rotate_x;
+	t_mat4				rotate_y;
+	t_mat4				rotate_z;
+	int					rotate_x_id;
+	int					rotate_y_id;
+	int					rotate_z_id;
+	float				rotate_x_factor;
+	float				rotate_y_factor;
+	float				rotate_z_factor;
 	t_vec3				min;
 	t_vec3				max;
 	t_vec3				object_center;
@@ -203,5 +209,7 @@ void					translate_mesh(t_scop *scop);
 float					translate_move(float base_value, int flag);
 t_mat4					mat_set_rotate(float c, float s, t_vec3 axis);
 void					rotate_x(t_scop *scop);
+void					rotate_y(t_scop *scop);
+void					rotate_z(t_scop *scop);
 
 #endif
