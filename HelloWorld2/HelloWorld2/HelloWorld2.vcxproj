@@ -146,12 +146,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="clean.c" />
+    <ClCompile Include="color_1.c" />
     <ClCompile Include="ft_2d_str_count.c" />
     <ClCompile Include="ft_atof.c" />
     <ClCompile Include="get_next_line.c" />
     <ClCompile Include="init.c" />
     <ClCompile Include="key_functions_1.c" />
     <ClCompile Include="key_functions_2.c" />
+    <ClCompile Include="key_functions_3.c" />
     <ClCompile Include="libft\ft_atoi.c" />
     <ClCompile Include="libft\ft_bzero.c" />
     <ClCompile Include="libft\ft_count_words.c" />
@@ -221,7 +223,7 @@
     <ClCompile Include="main_matrix.c" />
     <ClCompile Include="main_render.c" />
     <ClCompile Include="main_shader.c" />
-    <ClCompile Include="main_vertex_data.c" />
+    <ClCompile Include="main_gl_buffers.c" />
     <ClCompile Include="matrix_math_1.c" />
     <ClCompile Include="matrix_math_2.c" />
     <ClCompile Include="parser_indices.c" />

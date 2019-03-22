@@ -38,13 +38,13 @@ void	build_shaders(t_scop *scop)
 	scop->fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(scop->fragment_shader, 1, &scop->fragment_shdr_src, NULL);
 	compile_shader(scop->fragment_shader);
-	scop->shader_program = glCreateProgram();
-	glAttachShader(scop->shader_program, scop->vertex_shader);
-	glAttachShader(scop->shader_program, scop->fragment_shader);
-	glLinkProgram(scop->shader_program);
-	glGetProgramiv(scop->shader_program, GL_LINK_STATUS, &success);
+	scop->shdr_prog = glCreateProgram();
+	glAttachShader(scop->shdr_prog, scop->vertex_shader);
+	glAttachShader(scop->shdr_prog, scop->fragment_shader);
+	glLinkProgram(scop->shdr_prog);
+	glGetProgramiv(scop->shdr_prog, GL_LINK_STATUS, &success);
 	if (!success)
-		print_error(scop->shader_program, &log);
+		print_error(scop->shdr_prog, &log);
 	glDeleteShader(scop->vertex_shader);
 	glDeleteShader(scop->fragment_shader);
 }

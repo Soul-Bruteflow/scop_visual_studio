@@ -5,6 +5,7 @@
 ** External libs
 */
 # include				<math.h>
+# include				<time.h>
 # include				<stdio.h>
 # include				<stdlib.h>
 # include				<fcntl.h>
@@ -23,6 +24,7 @@
 */
 # define WINX			800
 # define WINY			600
+# define BUFF_COUNT		3
 # define WINNAME		"scop"
 # define VERT_PATH		"shader_vertex.glsl"
 # define FRAG_PATH		"shader_fragment.glsl"
@@ -62,16 +64,19 @@ typedef struct			s_scop
 	unsigned int		vertices_count;
 	unsigned int		indices_count;
 	float				*vertices;
+	float				*colors;
 	unsigned int		*indices;
 	int					i;
 	int					vertex_shader;
 	int					fragment_shader;
-	int					shader_program;
+	int					shdr_prog;
 	char				*vertex_shdr_src;
 	char				*fragment_shdr_src;
 	unsigned int		vbo;
 	unsigned int		ebo;
 	unsigned int		vao;
+	unsigned int		buffers[BUFF_COUNT];
+	unsigned int		buffers_idx[BUFF_COUNT - 1];
 	t_vec3				up;
 	t_vec3				eye;
 	t_vec3				center;
@@ -107,16 +112,17 @@ typedef struct			s_scop
 	t_vec3				max;
 	t_vec3				object_center;
 	t_vec3				object_back;
-	t_mat4				translate_cent;
-	t_mat4				translate_back;
-	int					translate_cent_id;
-	int					translate_back_id;
+	t_mat4				trans_cent;
+	t_mat4				trans_back;
+	int					trans_cent_id;
+	int					trans_back_id;
 	int					enable_rotate;
 	double				time;
 	double				old_time;
 	double				delta;
 	int					copy_auto;
 	int					copy_auto2;
+	int					is_draw_lines;
 }						t_scop;
 
 /*
@@ -175,12 +181,15 @@ void					remove_trailing_comment(char *shader_source);
 ** Render
 */
 void					main_render(t_scop *scop);
+void					transfer_matrices_to_gpu(t_scop *scop);
 
 /*
-** Vertext data
+** Buffers
 */
-void					main_vertex_data(t_scop *scop);
-void					set_up_vertex_data(t_scop *scop);
+void					create_gl_buffers(t_scop *scop);
+void					create_index_buffer(t_scop *scop);
+void					create_vertices_buffer(t_scop *scop);
+void					create_colors_buffer(t_scop *scop);
 
 /*
 ** Vector math
@@ -204,7 +213,7 @@ t_mat4					mat_build_view(t_vec3 eye, t_vec3 center, t_vec3 up);
 t_mat4					set_view_help(t_vec3 x, t_vec3 y, t_vec3 z, t_vec3 e);
 t_mat4					mat_build_proj(float f, float a, float n, float far);
 t_mat4					mat_init(float val);
-void					set_model(t_scop *scop);
+void					set_model_mats(t_scop *scop);
 t_mat4					mat_scale(float f);
 t_mat4					mat_translate(t_vec3 v);
 t_mat4					mat_rotate(float angle, t_vec3 axis);
@@ -221,5 +230,14 @@ void					rotate_x(t_scop *scop);
 void					rotate_y(t_scop *scop);
 void					rotate_z(t_scop *scop);
 void					auto_rotate(t_scop *scop);
+void					togle_auto_rotate(t_scop *scop);
+void					togle_draw_lines(t_scop *scop);
+
+/*
+** Colors
+*/
+void					main_colors(t_scop *scop);
+void					colors_allocate_mem(t_scop *scop);
+void					generate_random_colors(t_scop *scop);
 
 #endif

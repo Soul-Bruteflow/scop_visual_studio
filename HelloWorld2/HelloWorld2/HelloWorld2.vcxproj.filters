@@ -260,9 +260,6 @@
     <ClCompile Include="main_render.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_vertex_data.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="vector_math_1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -282,6 +279,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="key_functions_2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="key_functions_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_gl_buffers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="color_1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

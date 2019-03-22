@@ -72,5 +72,4 @@ void	auto_rotate(t_scop *scop)
 		scop->rot_a_fac = 0.0f;
 	if (scop->enable_rotate == 1)
 		scop->rot_a_fac += 20.0f * scop->delta;
-	printf("%f\n", scop->rot_a_fac);
 }

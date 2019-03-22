@@ -15,6 +15,7 @@ void	init_key(t_scop *scop)
 	scop->enable_rotate = 1;
 	scop->time = 0.0f;
 	scop->old_time = 0.0f;
+	scop->is_draw_lines = -1;
 }
 
 void	scale_mesh(t_scop *scop)
@@ -26,7 +27,7 @@ void	scale_mesh(t_scop *scop)
 			scop->scale_factor = 0.1f;
 			return ;
 		}
-		scop->scale_factor -= 0.05f;
+		scop->scale_factor -= 5.0f * scop->delta;
 	}
 	else if (scop->event.key.keysym.sym == SDLK_EQUALS)
 	{
@@ -35,7 +36,7 @@ void	scale_mesh(t_scop *scop)
 			scop->scale_factor = 5.0f;
 			return ;
 		}
-		scop->scale_factor += 0.05f;
+		scop->scale_factor += 5.0f * scop->delta;
 	}
 }
 

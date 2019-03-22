@@ -1,14 +1,14 @@
 #include "scop.h"
 
-void		set_model(t_scop *scop)
+void		set_model_mats(t_scop *scop)
 {
 	t_mat4	scale;
 	t_mat4	translate;
 
 	scop->scale = mat_scale(scop->scale_factor);
 	scop->translate = mat_translate(scop->translate_fac);
-	scop->translate_cent = mat_translate(scop->object_center);
-	scop->translate_back = mat_translate(scop->object_back);
+	scop->trans_cent = mat_translate(scop->object_center);
+	scop->trans_back = mat_translate(scop->object_back);
 	if (scop->enable_rotate == 1)
 		scop->rotate_x = mat_rotate(scop->rot_a_fac, vec3_set(0.0f, 1.0f, 0.0f));
 	else if (scop->enable_rotate == -1)
