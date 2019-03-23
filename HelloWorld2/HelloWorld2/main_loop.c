@@ -27,6 +27,11 @@ int		key_down(t_scop *scop)
 	{
 		togle_draw_lines(scop);
 		togle_auto_rotate(scop);
+		togle_color_mod_1(scop);
+		togle_color_mod_2(scop);
+		togle_color_mod_3(scop);
+		togle_color_mod_4(scop);
+		togle_color_refresh(scop);
 		if (scop->event.key.keysym.sym == SDLK_ESCAPE)
 			return (-1);
 		scale_mesh(scop);

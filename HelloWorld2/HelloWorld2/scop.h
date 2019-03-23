@@ -25,6 +25,7 @@
 # define WINX			800
 # define WINY			600
 # define BUFF_COUNT		3
+# define MOD_COUNT		4
 # define WINNAME		"scop"
 # define VERT_PATH		"shader_vertex.glsl"
 # define FRAG_PATH		"shader_fragment.glsl"
@@ -123,6 +124,17 @@ typedef struct			s_scop
 	int					copy_auto;
 	int					copy_auto2;
 	int					is_draw_lines;
+	short				color_mode_1;
+	short				color_mode_2;
+	short				color_mode_3;
+	short				color_mode_4;
+	int					mods_id_1;
+	int					mods_id_2;
+	int					mods_id_2_1;
+	int					mods_id_3;
+	int					mods_id_3_1;
+	int					mods_id_4;
+	int					mods_id_4_1;
 }						t_scop;
 
 /*
@@ -182,6 +194,7 @@ void					remove_trailing_comment(char *shader_source);
 */
 void					main_render(t_scop *scop);
 void					transfer_matrices_to_gpu(t_scop *scop);
+void					transfer_key_mods_to_gpu(t_scop *scop);
 
 /*
 ** Buffers
@@ -232,6 +245,9 @@ void					rotate_z(t_scop *scop);
 void					auto_rotate(t_scop *scop);
 void					togle_auto_rotate(t_scop *scop);
 void					togle_draw_lines(t_scop *scop);
+void					togle_color_mod_1(t_scop *scop);
+void					togle_color_mod_2(t_scop *scop);
+void					togle_color_refresh(t_scop *scop);
 
 /*
 ** Colors

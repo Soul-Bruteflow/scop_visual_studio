@@ -16,6 +16,10 @@ void	init_key(t_scop *scop)
 	scop->time = 0.0f;
 	scop->old_time = 0.0f;
 	scop->is_draw_lines = -1;
+	scop->color_mode_1 = 0;
+	scop->color_mode_2 = 0;
+	scop->color_mode_3 = 0;
+	scop->color_mode_4 = 0;
 }
 
 void	scale_mesh(t_scop *scop)

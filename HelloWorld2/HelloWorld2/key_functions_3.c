@@ -33,3 +33,38 @@ void	togle_draw_lines(t_scop *scop)
 		}
 	}
 }
+
+void	togle_color_mod_1(t_scop *scop)
+{
+	if (scop->event.key.keysym.sym == SDLK_2)
+	{
+		if (scop->color_mode_1 == 1)
+		{
+			scop->color_mode_1 = 0;
+		}
+		else
+			scop->color_mode_1 = 1;
+	}
+}
+
+void	togle_color_refresh(t_scop *scop)
+{
+	if (scop->event.key.keysym.sym == SDLK_r)
+	{
+		generate_random_colors(scop);
+		create_colors_buffer(scop);
+	}
+}
+
+void	togle_color_mod_2(t_scop *scop)
+{
+	if (scop->event.key.keysym.sym == SDLK_3)
+	{
+		if (scop->color_mode_2 == 1)
+		{
+			scop->color_mode_2 = 0;
+		}
+		else
+			scop->color_mode_2 = 1;
+	}
+}

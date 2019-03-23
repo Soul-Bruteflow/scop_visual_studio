@@ -154,6 +154,7 @@
     <ClCompile Include="key_functions_1.c" />
     <ClCompile Include="key_functions_2.c" />
     <ClCompile Include="key_functions_3.c" />
+    <ClCompile Include="key_functions_4.c" />
     <ClCompile Include="libft\ft_atoi.c" />
     <ClCompile Include="libft\ft_bzero.c" />
     <ClCompile Include="libft\ft_count_words.c" />
