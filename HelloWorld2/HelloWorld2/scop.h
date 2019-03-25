@@ -29,6 +29,7 @@
 # define WINNAME		"scop"
 # define VERT_PATH		"shader_vertex.glsl"
 # define FRAG_PATH		"shader_fragment.glsl"
+# define TGA_PATH_1		"texture_2.tga"
 
 /*
 ** Math structs
@@ -92,6 +93,7 @@ typedef struct			s_scop
 	float				scale_factor;
 	t_mat4				model;
 	int					model_id;
+	int					texture_id;
 	t_vec3				translate_fac;
 	t_mat4				scale;
 	t_mat4				translate;
@@ -128,6 +130,9 @@ typedef struct			s_scop
 	short				color_mode_2;
 	short				color_mode_3;
 	short				color_mode_4;
+	short				color_mode_5;
+	short				color_mode_6;
+	short				color_mode_7;
 	int					mods_id_1;
 	int					mods_id_2;
 	int					mods_id_2_1;
@@ -135,6 +140,18 @@ typedef struct			s_scop
 	int					mods_id_3_1;
 	int					mods_id_4;
 	int					mods_id_4_1;
+	int					mods_id_5;
+	int					mods_id_5_1;
+	int					mods_id_6;
+	int					mods_id_6_1;
+	int					mods_id_7;
+	int					mods_id_7_1;
+	unsigned char		tga_type_code;
+	short int			tga_width;
+	short int			tga_height;
+	unsigned char		tga_bit_count;
+	unsigned char		*tga_image_data;
+	long				tga_image_size;
 }						t_scop;
 
 /*
@@ -172,6 +189,7 @@ void					indices_write(t_scop *scop);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
 void					find_min_max(t_scop *scop);
+void					generate_uv(t_scop *scop);
 
 /*
 ** Main program loop
@@ -247,6 +265,11 @@ void					togle_auto_rotate(t_scop *scop);
 void					togle_draw_lines(t_scop *scop);
 void					togle_color_mod_1(t_scop *scop);
 void					togle_color_mod_2(t_scop *scop);
+void					togle_color_mod_3(t_scop *scop);
+void					togle_color_mod_4(t_scop *scop);
+void					togle_color_mod_5(t_scop *scop);
+void					togle_color_mod_6(t_scop *scop);
+void					togle_color_mod_7(t_scop *scop);
 void					togle_color_refresh(t_scop *scop);
 
 /*
@@ -255,5 +278,11 @@ void					togle_color_refresh(t_scop *scop);
 void					main_colors(t_scop *scop);
 void					colors_allocate_mem(t_scop *scop);
 void					generate_random_colors(t_scop *scop);
+
+/*
+** Load tga
+*/
+int						load_tga(char *filename, t_scop *scop);
+void					send_texture_to_opengl(t_scop *scop);
 
 #endif

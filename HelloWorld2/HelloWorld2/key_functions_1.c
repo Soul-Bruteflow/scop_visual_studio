@@ -20,6 +20,9 @@ void	init_key(t_scop *scop)
 	scop->color_mode_2 = 0;
 	scop->color_mode_3 = 0;
 	scop->color_mode_4 = 0;
+	scop->color_mode_5 = 0;
+	scop->color_mode_6 = 0;
+	scop->color_mode_7 = 0;
 }
 
 void	scale_mesh(t_scop *scop)

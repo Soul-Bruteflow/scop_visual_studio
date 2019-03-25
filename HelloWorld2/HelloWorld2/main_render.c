@@ -44,12 +44,31 @@ void	transfer_key_mods_to_gpu(t_scop *scop)
 	scop->mods_id_3 = glGetUniformLocation(scop->shdr_prog, "color_mode_3");
 	glUniform1i(scop->mods_id_3, scop->color_mode_3);
 
-	scop->mods_id_4 = glGetUniformLocation(scop->shdr_prog, "color_mode_4");
-	glUniform1i(scop->mods_id_4, scop->color_mode_4);
-
 	scop->mods_id_3_1 = glGetUniformLocation(scop->shdr_prog, "color_mode_3_1");
 	glUniform1i(scop->mods_id_3_1, scop->color_mode_3);
 
+	scop->mods_id_4 = glGetUniformLocation(scop->shdr_prog, "color_mode_4");
+	glUniform1i(scop->mods_id_4, scop->color_mode_4);
+
 	scop->mods_id_4_1 = glGetUniformLocation(scop->shdr_prog, "color_mode_4_1");
 	glUniform1i(scop->mods_id_4_1, scop->color_mode_4);
+
+
+	scop->mods_id_5 = glGetUniformLocation(scop->shdr_prog, "color_mode_5");
+	glUniform1i(scop->mods_id_5, scop->color_mode_5);
+
+	scop->mods_id_5_1 = glGetUniformLocation(scop->shdr_prog, "color_mode_5_1");
+	glUniform1i(scop->mods_id_5_1, scop->color_mode_5);
+
+	scop->mods_id_6 = glGetUniformLocation(scop->shdr_prog, "color_mode_6");
+	glUniform1i(scop->mods_id_6, scop->color_mode_6);
+
+	scop->mods_id_6_1 = glGetUniformLocation(scop->shdr_prog, "color_mode_6_1");
+	glUniform1i(scop->mods_id_6_1, scop->color_mode_6);
+
+	scop->mods_id_7 = glGetUniformLocation(scop->shdr_prog, "color_mode_7");
+	glUniform1i(scop->mods_id_7, scop->color_mode_7);
+
+	scop->mods_id_7_1 = glGetUniformLocation(scop->shdr_prog, "color_mode_7_1");
+	glUniform1i(scop->mods_id_7_1, scop->color_mode_7);
 }

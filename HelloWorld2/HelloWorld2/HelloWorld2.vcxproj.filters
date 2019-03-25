@@ -293,6 +293,12 @@
     <ClCompile Include="key_functions_4.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="load_tga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_uv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_vertex.glsl">

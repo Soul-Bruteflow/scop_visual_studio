@@ -7,6 +7,7 @@ void		obj_pars_main(t_scop *scop)
 	vertices_pars(scop);
 	indices_pars(scop);
 	find_min_max(scop);
+	generate_uv(scop);
 }
 
 int			is_obj(t_scop *scop)

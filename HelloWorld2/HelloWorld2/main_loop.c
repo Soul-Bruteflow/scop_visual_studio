@@ -31,6 +31,9 @@ int		key_down(t_scop *scop)
 		togle_color_mod_2(scop);
 		togle_color_mod_3(scop);
 		togle_color_mod_4(scop);
+		togle_color_mod_5(scop);
+		togle_color_mod_6(scop);
+		togle_color_mod_7(scop);
 		togle_color_refresh(scop);
 		if (scop->event.key.keysym.sym == SDLK_ESCAPE)
 			return (-1);

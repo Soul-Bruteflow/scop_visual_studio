@@ -149,6 +149,7 @@
     <ClCompile Include="color_1.c" />
     <ClCompile Include="ft_2d_str_count.c" />
     <ClCompile Include="ft_atof.c" />
+    <ClCompile Include="generate_uv.c" />
     <ClCompile Include="get_next_line.c" />
     <ClCompile Include="init.c" />
     <ClCompile Include="key_functions_1.c" />
@@ -218,6 +219,7 @@
     <ClCompile Include="libft\ft_strtrim.c" />
     <ClCompile Include="libft\ft_tolower.c" />
     <ClCompile Include="libft\ft_toupper.c" />
+    <ClCompile Include="load_tga.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="main_errors.c" />
     <ClCompile Include="main_loop.c" />

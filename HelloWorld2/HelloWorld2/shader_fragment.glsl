@@ -4,10 +4,17 @@ out vec4 color;
 
 flat	in vec4 fragment_color_flat;
 smooth	in vec4 fragment_color_smooth;
+
+in vec2 texture_uv;
+uniform sampler2D tex;
+
 uniform bool color_mode_1;
 uniform bool color_mode_2_1;
 uniform bool color_mode_3_1;
 uniform bool color_mode_4_1;
+uniform bool color_mode_5_1;
+uniform bool color_mode_6_1;
+uniform bool color_mode_7_1;
 
 float grey;
 
@@ -20,17 +27,13 @@ void main()
 	{
 		color = fragment_color_flat;
 	}
-	if (color_mode_2_1)
+	if (color_mode_2_1 || color_mode_3_1 || color_mode_4_1)
 	{
 		color = fragment_color_smooth;
 	}
-	if (color_mode_3_1)
+	if (color_mode_5_1 || color_mode_6_1 || color_mode_7_1)
 	{
-		color = fragment_color_smooth;
-	}
-	if (color_mode_4_1)
-	{
-		color = fragment_color_smooth;
+		color = texture(tex, texture_uv);
 	}
 }
 //FRAGMENT SHADER

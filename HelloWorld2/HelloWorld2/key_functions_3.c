@@ -41,9 +41,23 @@ void	togle_color_mod_1(t_scop *scop)
 		if (scop->color_mode_1 == 1)
 		{
 			scop->color_mode_1 = 0;
+			scop->color_mode_2 = 0;
+			scop->color_mode_3 = 0;
+			scop->color_mode_4 = 0;
+			scop->color_mode_5 = 0;
+			scop->color_mode_6 = 0;
+			scop->color_mode_7 = 0;
 		}
 		else
+		{
 			scop->color_mode_1 = 1;
+			scop->color_mode_2 = 0;
+			scop->color_mode_3 = 0;
+			scop->color_mode_4 = 0;
+			scop->color_mode_5 = 0;
+			scop->color_mode_6 = 0;
+			scop->color_mode_7 = 0;
+		}
 	}
 }
 
@@ -62,9 +76,23 @@ void	togle_color_mod_2(t_scop *scop)
 	{
 		if (scop->color_mode_2 == 1)
 		{
+			scop->color_mode_1 = 0;
 			scop->color_mode_2 = 0;
+			scop->color_mode_3 = 0;
+			scop->color_mode_4 = 0;
+			scop->color_mode_5 = 0;
+			scop->color_mode_6 = 0;
+			scop->color_mode_7 = 0;
 		}
 		else
+		{
+			scop->color_mode_1 = 0;
 			scop->color_mode_2 = 1;
+			scop->color_mode_3 = 0;
+			scop->color_mode_4 = 0;
+			scop->color_mode_5 = 0;
+			scop->color_mode_6 = 0;
+			scop->color_mode_7 = 0;
+		}
 	}
 }
