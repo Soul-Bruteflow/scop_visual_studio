@@ -67,6 +67,10 @@ void	togle_color_refresh(t_scop *scop)
 	{
 		generate_random_colors(scop);
 		create_colors_buffer(scop);
+		if (scop->cur_tex_num >= TEX_COUNT)
+			scop->cur_tex_num = 0;
+		else
+			scop->cur_tex_num++;
 	}
 }
 

@@ -6,7 +6,8 @@ flat	in vec4 fragment_color_flat;
 smooth	in vec4 fragment_color_smooth;
 
 in vec2 texture_uv;
-uniform sampler2D tex;
+uniform sampler2D tex_1;
+uniform sampler2D tex_2;
 
 uniform bool color_mode_1;
 uniform bool color_mode_2_1;
@@ -33,7 +34,7 @@ void main()
 	}
 	if (color_mode_5_1 || color_mode_6_1 || color_mode_7_1)
 	{
-		color = texture(tex, texture_uv);
+		color = texture(tex_1, texture_uv);
 	}
 }
 //FRAGMENT SHADER

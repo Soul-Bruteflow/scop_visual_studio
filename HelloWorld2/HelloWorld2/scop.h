@@ -26,10 +26,30 @@
 # define WINY			600
 # define BUFF_COUNT		3
 # define MOD_COUNT		4
+# define TEX_COUNT		10
 # define WINNAME		"scop"
 # define VERT_PATH		"shader_vertex.glsl"
 # define FRAG_PATH		"shader_fragment.glsl"
-# define TGA_PATH_1		"texture_2.tga"
+# define TGA_PATH_1		"texture_1.tga"
+# define TGA_PATH_2		"texture_2.tga"
+# define TGA_PATH_3		"texture_3.tga"
+# define TGA_PATH_4		"texture_4.tga"
+# define TGA_PATH_5		"texture_5.tga"
+# define TGA_PATH_6		"texture_6.tga"
+# define TGA_PATH_7		"texture_7.tga"
+# define TGA_PATH_8		"texture_8.tga"
+# define TGA_PATH_9		"texture_9.tga"
+# define TGA_PATH_10	"texture_10.tga"
+# define TGA_GL_1		"tex_1"
+# define TGA_GL_2		"tex_2"
+# define TGA_GL_3		"tex_3"
+# define TGA_GL_4		"tex_4"
+# define TGA_GL_5		"tex_5"
+# define TGA_GL_6		"tex_6"
+# define TGA_GL_7		"tex_7"
+# define TGA_GL_8		"tex_8"
+# define TGA_GL_9		"tex_9"
+# define TGA_GL_10		"tex_10"
 
 /*
 ** Math structs
@@ -46,13 +66,19 @@ typedef struct			s_vec3
 	float				z;
 }						t_vec3;
 
-typedef struct			s_vec4
+typedef struct			s_tex
 {
-	float				x;
-	float				y;
-	float				z;
-	float				w;
-}						t_vec4;
+	unsigned char		tga_type_code;
+	short int			tga_width;
+	short int			tga_height;
+	unsigned char		tga_bit_count;
+	unsigned char		*tga_image_data;
+	long				tga_image_size;
+	unsigned int		i;
+	char				*filename;
+	char				*gl_name;
+	int					gl_id;
+}						t_tex;
 
 /*
 ** Main data structure
@@ -146,12 +172,8 @@ typedef struct			s_scop
 	int					mods_id_6_1;
 	int					mods_id_7;
 	int					mods_id_7_1;
-	unsigned char		tga_type_code;
-	short int			tga_width;
-	short int			tga_height;
-	unsigned char		tga_bit_count;
-	unsigned char		*tga_image_data;
-	long				tga_image_size;
+	t_tex				t[TEX_COUNT];
+	int					cur_tex_num;
 }						t_scop;
 
 /*
@@ -282,7 +304,10 @@ void					generate_random_colors(t_scop *scop);
 /*
 ** Load tga
 */
-int						load_tga(char *filename, t_scop *scop);
-void					send_texture_to_opengl(t_scop *scop);
+int						load_tga(t_scop *scop, int n);
+void					send_texture_to_opengl(t_scop *scop, int n);
+int						load_all_tga(t_scop *scop);
+void					generate_file_names(t_scop *scop);
+void					send_all_textures(t_scop *scop);
 
 #endif
