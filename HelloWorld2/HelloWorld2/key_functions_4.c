@@ -17,7 +17,6 @@ void	togle_color_mod_3(t_scop *scop)
 		else
 			scop->color_mode_3 = 1;
 	}
-	printf("%d\n", scop->color_mode_3);
 }
 
 void	togle_color_mod_4(t_scop *scop)

@@ -227,12 +227,6 @@
     <ClCompile Include="ft_atof.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parser_main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="parser_vertices.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="parser_indices.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -297,6 +291,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="generate_uv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

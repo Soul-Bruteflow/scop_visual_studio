@@ -8,7 +8,7 @@ void	main_colors(t_scop *scop)
 
 void		colors_allocate_mem(t_scop *scop)
 {
-	scop->colors = malloc(sizeof(float) * scop->vertices_count * 4);
+	scop->colors = (float*)malloc(sizeof(float) * (scop->vert_num + (scop->vert_num / 3)));
 }
 
 void	generate_random_colors(t_scop *scop)
@@ -16,7 +16,7 @@ void	generate_random_colors(t_scop *scop)
 	unsigned int i;
 
 	i = 0;
-	while (i < scop->vertices_count * 4)
+	while (i < (scop->vert_num + (scop->vert_num / 3)))
 	{
 		scop->colors[i + 0] = ((float)rand() / (float)(RAND_MAX)) * 1.0f;
 		scop->colors[i + 1] = ((float)rand() / (float)(RAND_MAX)) * 1.0f;

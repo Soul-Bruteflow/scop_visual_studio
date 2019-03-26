@@ -89,9 +89,9 @@ typedef struct			s_scop
 	SDL_GLContext		main_context;
 	SDL_Event			event;
 	char				*obj_file_name;
-	unsigned int		vertices_count;
+	unsigned int		vert_num;
 	unsigned int		indices_count;
-	float				*vertices;
+	float				*verts;
 	float				*colors;
 	unsigned int		*indices;
 	int					i;
@@ -198,16 +198,11 @@ void					cleanup_sdl(t_scop *scop);
 /*
 ** Parser
 */
-void					obj_pars_main(t_scop *scop);
+int						obj_pars_main(t_scop *scop);
 int						is_obj(t_scop *scop);
-void					vertices_pars(t_scop *scop);
-void					vertices_count(t_scop *scop);
-void					vertices_allocate_mem(t_scop *scop);
-void					vertices_write(t_scop *scop);
-void					indices_pars(t_scop *scop);
-void					indices_count(t_scop *scop);
-void					indices_allocate_mem(t_scop *scop);
-void					indices_write(t_scop *scop);
+int						read_wtire_v_f(t_scop *scop);
+int						vertices_write(t_scop *scop, int cap, char *line);
+int						indices_write(t_scop *scop, int cap2, char *line);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
 void					find_min_max(t_scop *scop);

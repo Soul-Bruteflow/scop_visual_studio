@@ -12,7 +12,7 @@ void	main_render(t_scop *scop)
 	if (scop->cur_tex_num >= TEX_COUNT)
 		scop->cur_tex_num = 0;
 	glBindTexture(GL_TEXTURE_2D, scop->t[scop->cur_tex_num].gl_id);
-	glDrawElements(GL_TRIANGLES, scop->indices_count * 3, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, scop->indices_count, GL_UNSIGNED_INT, 0);
 	SDL_GL_SwapWindow(scop->main_window);
 }
 

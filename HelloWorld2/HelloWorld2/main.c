@@ -14,7 +14,8 @@ int				main(int argc, char *argv[])
 		init_key(scop);
 		init_open_gl_attributes(scop);
 		scop->obj_file_name = argv[1];
-		obj_pars_main(scop);
+		if (obj_pars_main(scop) == -1)
+			return (0);
 		load_shaders(scop);
 		send_all_textures(scop);
 		main_colors(scop);

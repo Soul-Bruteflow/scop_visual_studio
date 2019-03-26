@@ -230,9 +230,8 @@
     <ClCompile Include="matrix_math_1.c" />
     <ClCompile Include="matrix_math_2.c" />
     <ClCompile Include="parser_indices.c" />
-    <ClCompile Include="parser_main.c" />
+    <ClCompile Include="main_parser.c" />
     <ClCompile Include="triangle_main.c" />
-    <ClCompile Include="parser_vertices.c" />
     <ClCompile Include="vector_math_1.c" />
     <ClCompile Include="vector_math_2.c" />
   </ItemGroup>
