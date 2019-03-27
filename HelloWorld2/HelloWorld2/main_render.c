@@ -2,9 +2,11 @@
 
 void	main_render(t_scop *scop)
 {
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClearColor(scop->bgrd_col.x, scop->bgrd_col.y, scop->bgrd_col.z, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glUseProgram(scop->shdr_prog);
+	scop->view_id = glGetUniformLocation(scop->shdr_prog, "view");
+	glUniformMatrix4fv(scop->view_id, 1, GL_FALSE, scop->view.m);
 	set_model_mats(scop);
 	transfer_matrices_to_gpu(scop);
 	transfer_key_mods_to_gpu(scop);

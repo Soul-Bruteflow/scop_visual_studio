@@ -6,7 +6,7 @@ void		set_model_mats(t_scop *scop)
 	t_mat4	translate;
 
 	scop->scale = mat_scale(scop->scale_factor);
-	scop->translate = mat_translate(scop->translate_fac);
+	scop->translate = mat_translate(scop->move_fac);
 	scop->trans_cent = mat_translate(scop->object_center);
 	scop->trans_back = mat_translate(scop->object_back);
 	if (scop->enable_rotate == 1)

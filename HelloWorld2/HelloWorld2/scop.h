@@ -120,7 +120,7 @@ typedef struct			s_scop
 	t_mat4				model;
 	int					model_id;
 	int					texture_id;
-	t_vec3				translate_fac;
+	t_vec3				move_fac;
 	t_mat4				scale;
 	t_mat4				translate;
 	int					scale_id;
@@ -174,6 +174,7 @@ typedef struct			s_scop
 	int					mods_id_7_1;
 	t_tex				t[TEX_COUNT];
 	int					cur_tex_num;
+	t_vec3				bgrd_col;
 }						t_scop;
 
 /*
@@ -272,7 +273,7 @@ t_mat4					mat_rotate(float angle, t_vec3 axis);
 void					init_key(t_scop *scop);
 void					scale_mesh(t_scop *scop);
 void					translate_mesh(t_scop *scop);
-float					translate_move(float base_value, int flag);
+float					translate_move(float base_value, int flag, double delta);
 t_mat4					mat_set_rotate(float c, float s, t_vec3 axis);
 void					rotate_x(t_scop *scop);
 void					rotate_y(t_scop *scop);
@@ -288,6 +289,12 @@ void					togle_color_mod_5(t_scop *scop);
 void					togle_color_mod_6(t_scop *scop);
 void					togle_color_mod_7(t_scop *scop);
 void					togle_color_refresh(t_scop *scop);
+void					change_background_color(t_scop *scop);
+void					move_camera(t_scop *scop);
+void					move_camera_z(t_scop *scop);
+void					move_camera_x(t_scop *scop);
+void					move_camera_y(t_scop *scop);
+void					toggle(t_scop *scop);
 
 /*
 ** Colors

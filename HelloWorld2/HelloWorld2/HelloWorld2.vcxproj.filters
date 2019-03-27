@@ -296,6 +296,9 @@
     <ClCompile Include="main_parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="key_functions_5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader_vertex.glsl">

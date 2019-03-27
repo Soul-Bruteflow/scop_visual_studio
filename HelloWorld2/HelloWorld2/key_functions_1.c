@@ -3,7 +3,7 @@
 void	init_key(t_scop *scop)
 {
 	scop->scale_factor = 1.0f;
-	scop->translate_fac = vec3_set(0.0f, 0.0f, 0.0f);
+	scop->move_fac = vec3_set(0.0f, 0.0f, 0.0f);
 	scop->rot_x_fac = 0.0f;
 	scop->rot_y_fac = 0.0f;
 	scop->rot_z_fac = 0.0f;
@@ -24,6 +24,8 @@ void	init_key(t_scop *scop)
 	scop->color_mode_6 = 0;
 	scop->color_mode_7 = 0;
 	scop->cur_tex_num = 0;
+	scop->bgrd_col = vec3_set(0.0f, 0.0f, 0.0f);
+	scop->eye = vec3_set(0.0f, 0.0f, -7.0f);
 }
 
 void	scale_mesh(t_scop *scop)
@@ -51,24 +53,24 @@ void	scale_mesh(t_scop *scop)
 void	translate_mesh(t_scop *scop)
 {
 	if (scop->event.key.keysym.sym == SDLK_UP)
-		scop->translate_fac.y += translate_move(scop->translate_fac.y, 1);
+		scop->move_fac.y += translate_move(scop->move_fac.y, 1, scop->delta);
 	if (scop->event.key.keysym.sym == SDLK_DOWN)
-		scop->translate_fac.y -= translate_move(scop->translate_fac.y, -1);
+		scop->move_fac.y -= translate_move(scop->move_fac.y, -1, scop->delta);
 	if (scop->event.key.keysym.sym == SDLK_LEFT)
-		scop->translate_fac.x += translate_move(scop->translate_fac.x, 1);
+		scop->move_fac.x += translate_move(scop->move_fac.x, 1, scop->delta);
 	if (scop->event.key.keysym.sym == SDLK_RIGHT)
-		scop->translate_fac.x -= translate_move(scop->translate_fac.x, -1);
+		scop->move_fac.x -= translate_move(scop->move_fac.x, -1, scop->delta);
 	if (scop->event.key.keysym.sym == SDLK_m)
-		scop->translate_fac.z += translate_move(scop->translate_fac.z, 1);
+		scop->move_fac.z += translate_move(scop->move_fac.z, 1, scop->delta);
 	if (scop->event.key.keysym.sym == SDLK_n)
-		scop->translate_fac.z -= translate_move(scop->translate_fac.z, -1);
+		scop->move_fac.z -= translate_move(scop->move_fac.z, -1, scop->delta);
 }
 
-float	translate_move(float base_value, int flag)
+float	translate_move(float base_value, int flag, double delta)
 {
-	if (base_value >= 50.0f && flag == 1)
+	if (base_value >= 100.0f && flag == 1)
 		return (0.0f);
-	if (base_value <= -50.0f && flag == -1)
+	if (base_value <= -100.0f && flag == -1)
 		return (0.0f);
-	return (1.0f);
+	return (15.0f * delta);
 }

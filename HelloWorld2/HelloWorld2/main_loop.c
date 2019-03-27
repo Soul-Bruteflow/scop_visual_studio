@@ -25,16 +25,9 @@ int		key_down(t_scop *scop)
 {
 	if (scop->event.type == SDL_KEYDOWN)
 	{
-		togle_draw_lines(scop);
-		togle_auto_rotate(scop);
-		togle_color_mod_1(scop);
-		togle_color_mod_2(scop);
-		togle_color_mod_3(scop);
-		togle_color_mod_4(scop);
-		togle_color_mod_5(scop);
-		togle_color_mod_6(scop);
-		togle_color_mod_7(scop);
-		togle_color_refresh(scop);
+		move_camera(scop);
+		change_background_color(scop);
+		toggle(scop);
 		if (scop->event.key.keysym.sym == SDLK_ESCAPE)
 			return (-1);
 		scale_mesh(scop);
@@ -44,4 +37,18 @@ int		key_down(t_scop *scop)
 		rotate_z(scop);
 	}
 	return (0);
+}
+
+void	toggle(t_scop *scop)
+{
+	togle_draw_lines(scop);
+	togle_auto_rotate(scop);
+	togle_color_mod_1(scop);
+	togle_color_mod_2(scop);
+	togle_color_mod_3(scop);
+	togle_color_mod_4(scop);
+	togle_color_mod_5(scop);
+	togle_color_mod_6(scop);
+	togle_color_mod_7(scop);
+	togle_color_refresh(scop);
 }
