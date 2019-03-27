@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:44 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:44 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
 int				main(int argc, char *argv[])
@@ -25,8 +37,8 @@ int				main(int argc, char *argv[])
 		glClear(GL_COLOR_BUFFER_BIT);
 		SDL_GL_SwapWindow(scop->main_window);
 		main_loop(scop);
+		cleanup_sdl(scop);
 	}
-	cleanup_sdl(scop);
 	return (0);
 }
 
@@ -46,7 +58,9 @@ void			send_texture_to_opengl(t_scop *scop, int n)
 	glGenTextures(1, &scop->t[n].gl_id);
 	glActiveTexture(GL_TEXTURE0 + n);
 	glBindTexture(GL_TEXTURE_2D, scop->t[n].gl_id);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, scop->t[n].tga_width, scop->t[n].tga_height, 0, GL_RGB, GL_UNSIGNED_BYTE, scop->t[n].tga_image_data);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, scop->t[n].tga_width,
+				scop->t[n].tga_height, 0, GL_RGB, GL_UNSIGNED_BYTE,
+				scop->t[n].tga_image_data);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);

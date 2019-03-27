@@ -230,9 +230,6 @@
     <ClCompile Include="parser_indices.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="triangle_main.c">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="ft_2d_str_count.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -288,9 +285,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="load_tga.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="generate_uv.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main_parser.c">

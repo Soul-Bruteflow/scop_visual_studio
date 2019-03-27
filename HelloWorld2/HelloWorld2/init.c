@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:49:53 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:49:53 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
 t_scop			*init_scop()
@@ -14,7 +26,7 @@ int				init_sdl_gl(t_scop *scop)
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 		return (-1);
 	scop->main_window = SDL_CreateWindow(WINNAME, SDL_WINDOWPOS_CENTERED,
-						SDL_WINDOWPOS_CENTERED, WINX, WINY, SDL_WINDOW_OPENGL);
+	SDL_WINDOWPOS_CENTERED, WINX, WINY, SDL_WINDOW_OPENGL);
 	if (!scop->main_window)
 		return (-1);
 	scop->main_context = SDL_GL_CreateContext(scop->main_window);
@@ -29,8 +41,7 @@ int				init_sdl_gl(t_scop *scop)
 
 void			init_open_gl_attributes()
 {
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
-						SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, PROFILE_CORE);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix_math_1.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:46 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:46 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
 t_mat4		mat_build_view(t_vec3 eye, t_vec3 center, t_vec3 up)
@@ -39,9 +51,9 @@ t_mat4		set_view_help(t_vec3 x, t_vec3 y, t_vec3 z, t_vec3 eye)
 t_mat4		mat_build_proj(float fov, float aspect, float near, float far)
 {
 	t_mat4	result;
-	float y_scale;
-	float x_scale;
-	float nearmfar;
+	float	y_scale;
+	float	x_scale;
+	float	nearmfar;
 
 	result = mat_init(0);
 	y_scale = 1.0f / tanf((M_PI / 180.0f) * fov / 2);

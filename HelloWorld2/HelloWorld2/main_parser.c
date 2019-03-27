@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_parser.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:36 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:36 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
-int		obj_pars_main(t_scop *scop)
+int			obj_pars_main(t_scop *scop)
 {
 	if (is_obj(scop) == -1)
 		return (-1);
 	if (read_wtire_v_f(scop) == -1)
 		return (-1);
 	find_min_max(scop);
-	generate_uv(scop);
 	return (1);
 }
 
-int			read_wtire_v_f(t_scop *scop)
+int			read_wtire_v_f(t_scop *s)
 {
 	int		fd;
 	char	*line;
@@ -20,22 +31,22 @@ int			read_wtire_v_f(t_scop *scop)
 
 	cap = 3;
 	cap2 = 6;
-	scop->vert_num = 0;
-	scop->indices_count = 0;
-	if ((fd = open(scop->obj_file_name, O_RDONLY)) < 0)
+	s->vert_num = 0;
+	s->indic_num = 0;
+	if ((fd = open(s->obj_file_name, O_RDONLY)) < 0)
 		return (-1);
-	scop->verts = (float*)malloc(sizeof(float) * cap);
-	scop->indices = (unsigned int*)malloc(sizeof(unsigned int) * cap2);
+	s->verts = (float*)malloc(sizeof(float) * cap);
+	s->indic = (unsigned int*)malloc(sizeof(unsigned int) * cap2);
 	while (get_next_line(fd, &line) == 1)
 	{
 		if (line[0] == 'v' && line[1] == ' ')
-			cap = vertices_write(scop, cap, line);
+			cap = vertices_write(s, cap, line);
 		else if (line[0] == 'f' && line[1] == ' ')
-			cap2 = indices_write(scop, cap2, line);
+			cap2 = indices_write(s, cap2, line);
 		free(line);
 	}
-	scop->verts = (float*)realloc(scop->verts, scop->vert_num * sizeof(float));
-	scop->indices = (unsigned int*)realloc(scop->indices, scop->indices_count * sizeof(unsigned int));
+	s->verts = (float*)realloc(s->verts, s->vert_num * sizeof(float));
+	s->indic = (Uint32*)realloc(s->indic, s->indic_num * sizeof(Uint32));
 	close(fd);
 	return (1);
 }

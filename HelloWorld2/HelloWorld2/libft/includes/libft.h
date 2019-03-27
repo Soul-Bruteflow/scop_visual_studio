@@ -112,4 +112,5 @@ void				ft_putnbr_fd(int n, int fd);
 */
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
+
 #endif

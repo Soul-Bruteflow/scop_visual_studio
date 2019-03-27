@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-static t_list	*file_manage(t_list **head, const int fd)
+static t_list		*file_manage(t_list **head, const int fd)
 {
 	t_list			*current;
 	size_t			file_des;
@@ -32,7 +32,7 @@ static t_list	*file_manage(t_list **head, const int fd)
 	return (current);
 }
 
-static int		gnl_magic(char **dst, char *src, const char delim)
+static int			gnl_magic(char **dst, char *src, const char delim)
 {
 	int				i;
 	char			*tmp;
@@ -52,7 +52,7 @@ static int		gnl_magic(char **dst, char *src, const char delim)
 	return (i);
 }
 
-static void		gnl_i_ll_be_back(char **s, char delim)
+static void			gnl_i_ll_be_back(char **s, char delim)
 {
 	char			*tmp;
 	int				i;
@@ -72,7 +72,7 @@ static void		gnl_i_ll_be_back(char **s, char delim)
 	free(tmp);
 }
 
-int				get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
 	int				read_size;
 	char			buf[BUFF_SIZE + 1];

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   scop.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:56 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:56 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCOP_H
 # define SCOP_H
 
@@ -50,6 +62,7 @@
 # define TGA_GL_8		"tex_8"
 # define TGA_GL_9		"tex_9"
 # define TGA_GL_10		"tex_10"
+# define PROFILE_CORE	0x0001
 
 /*
 ** Math structs
@@ -90,10 +103,10 @@ typedef struct			s_scop
 	SDL_Event			event;
 	char				*obj_file_name;
 	unsigned int		vert_num;
-	unsigned int		indices_count;
+	unsigned int		indic_num;
 	float				*verts;
 	float				*colors;
-	unsigned int		*indices;
+	unsigned int		*indic;
 	int					i;
 	int					vertex_shader;
 	int					fragment_shader;
@@ -207,7 +220,6 @@ int						indices_write(t_scop *scop, int cap2, char *line);
 void					indices_write_three(t_scop *scop, char **s_values);
 void					indices_write_four(t_scop *scop, char **s_values);
 void					find_min_max(t_scop *scop);
-void					generate_uv(t_scop *scop);
 
 /*
 ** Main program loop
@@ -231,6 +243,7 @@ void					remove_trailing_comment(char *shader_source);
 void					main_render(t_scop *scop);
 void					transfer_matrices_to_gpu(t_scop *scop);
 void					transfer_key_mods_to_gpu(t_scop *scop);
+void					transfer_key_mods_to_gpu2(t_scop *scop);
 
 /*
 ** Buffers

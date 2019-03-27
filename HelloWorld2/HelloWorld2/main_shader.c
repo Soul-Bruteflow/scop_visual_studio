@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_shader.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:41 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:41 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
-void	load_shaders(t_scop *scop)
+void		load_shaders(t_scop *scop)
 {
 	scop->vertex_shdr_src = parser_shader(VERT_PATH);
 	scop->fragment_shdr_src = parser_shader(FRAG_PATH);
@@ -9,11 +21,11 @@ void	load_shaders(t_scop *scop)
 	build_shaders(scop);
 }
 
-char	*parser_shader(const char *file_path)
+char		*parser_shader(const char *file_path)
 {
-	char *buffer;
-	long length;
-	FILE *f;
+	char	*buffer;
+	long	length;
+	FILE	*f;
 
 	f = fopen(file_path, "r");
 	fseek(f, 0, SEEK_END);
@@ -27,10 +39,10 @@ char	*parser_shader(const char *file_path)
 	return (buffer);
 }
 
-void	build_shaders(t_scop *scop)
+void		build_shaders(t_scop *scop)
 {
-	int success;
-	char log[512];
+	int		success;
+	char	log[512];
 
 	scop->vertex_shader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(scop->vertex_shader, 1, &scop->vertex_shdr_src, NULL);
@@ -49,10 +61,10 @@ void	build_shaders(t_scop *scop)
 	glDeleteShader(scop->fragment_shader);
 }
 
-void	compile_shader(int shader)
+void		compile_shader(int shader)
 {
-	int success;
-	char log[512];
+	int		success;
+	char	log[512];
 
 	glCompileShader(shader);
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser_indices.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 15:51:50 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 15:51:50 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
 int			indices_write(t_scop *scop, int cap2, char *line)
@@ -13,29 +25,29 @@ int			indices_write(t_scop *scop, int cap2, char *line)
 	else
 		indices_write_three(scop, splited_values);
 	free(splited_values);
-	if (scop->indices_count == cap2)
+	if (scop->indic_num == cap2)
 	{
 		cap2 *= 2;
-		scop->indices = (unsigned int*)realloc(scop->indices, cap2 * sizeof(unsigned int));
+		scop->indic = (Uint32*)realloc(scop->indic, cap2 * sizeof(Uint32));
 	}
 	return (cap2);
 }
 
 void		indices_write_three(t_scop *scop, char	**splited_values)
 {
-	scop->indices[scop->indices_count + 0] = (ft_atoi(splited_values[0]) - 1);
-	scop->indices[scop->indices_count + 1] = (ft_atoi(splited_values[1]) - 1);
-	scop->indices[scop->indices_count + 2] = (ft_atoi(splited_values[2]) - 1);
-	scop->indices_count += 3;
+	scop->indic[scop->indic_num + 0] = (ft_atoi(splited_values[0]) - 1);
+	scop->indic[scop->indic_num + 1] = (ft_atoi(splited_values[1]) - 1);
+	scop->indic[scop->indic_num + 2] = (ft_atoi(splited_values[2]) - 1);
+	scop->indic_num += 3;
 }
 
 void		indices_write_four(t_scop *scop, char	**splited_values)
 {
-	scop->indices[scop->indices_count + 0] = (ft_atoi(splited_values[0]) - 1);
-	scop->indices[scop->indices_count + 1] = (ft_atoi(splited_values[1]) - 1);
-	scop->indices[scop->indices_count + 2] = (ft_atoi(splited_values[2]) - 1);
-	scop->indices[scop->indices_count + 3] = (ft_atoi(splited_values[0]) - 1);
-	scop->indices[scop->indices_count + 4] = (ft_atoi(splited_values[2]) - 1);
-	scop->indices[scop->indices_count + 5] = (ft_atoi(splited_values[3]) - 1);
-	scop->indices_count += 6;
+	scop->indic[scop->indic_num + 0] = (ft_atoi(splited_values[0]) - 1);
+	scop->indic[scop->indic_num + 1] = (ft_atoi(splited_values[1]) - 1);
+	scop->indic[scop->indic_num + 2] = (ft_atoi(splited_values[2]) - 1);
+	scop->indic[scop->indic_num + 3] = (ft_atoi(splited_values[0]) - 1);
+	scop->indic[scop->indic_num + 4] = (ft_atoi(splited_values[2]) - 1);
+	scop->indic[scop->indic_num + 5] = (ft_atoi(splited_values[3]) - 1);
+	scop->indic_num += 6;
 }

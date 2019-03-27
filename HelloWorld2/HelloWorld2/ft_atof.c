@@ -12,7 +12,7 @@
 
 #include "scop.h"
 
-void	skip_whitespaces(const char *s, int *i, float *fact)
+void		skip_whitespaces(const char *s, int *i, float *fact)
 {
 	int		j;
 	float	tmp;
@@ -30,11 +30,11 @@ void	skip_whitespaces(const char *s, int *i, float *fact)
 	*fact = tmp;
 }
 
-float	ft_atof(const char *s)
+float		ft_atof(const char *s)
 {
-	float		rez[2];
-	int			d[2];
-	int			i;
+	float	rez[2];
+	int		d[2];
+	int		i;
 
 	rez[0] = 0;
 	skip_whitespaces(s, &i, &rez[1]);

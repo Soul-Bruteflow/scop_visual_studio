@@ -149,7 +149,6 @@
     <ClCompile Include="color_1.c" />
     <ClCompile Include="ft_2d_str_count.c" />
     <ClCompile Include="ft_atof.c" />
-    <ClCompile Include="generate_uv.c" />
     <ClCompile Include="get_next_line.c" />
     <ClCompile Include="init.c" />
     <ClCompile Include="key_functions_1.c" />
@@ -232,7 +231,6 @@
     <ClCompile Include="matrix_math_2.c" />
     <ClCompile Include="parser_indices.c" />
     <ClCompile Include="main_parser.c" />
-    <ClCompile Include="triangle_main.c" />
     <ClCompile Include="vector_math_1.c" />
     <ClCompile Include="vector_math_2.c" />
   </ItemGroup>

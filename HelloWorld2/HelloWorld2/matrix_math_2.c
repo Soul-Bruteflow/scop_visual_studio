@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix_math_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:49 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:49 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
-void		set_model_mats(t_scop *scop)
+void		set_model_mats(t_scop *s)
 {
 	t_mat4	scale;
 	t_mat4	translate;
 
-	scop->scale = mat_scale(scop->scale_factor);
-	scop->translate = mat_translate(scop->move_fac);
-	scop->trans_cent = mat_translate(scop->object_center);
-	scop->trans_back = mat_translate(scop->object_back);
-	if (scop->enable_rotate == 1)
-		scop->rotate_x = mat_rotate(scop->rot_a_fac, vec3_set(0.0f, 1.0f, 0.0f));
-	else if (scop->enable_rotate == -1)
+	s->scale = mat_scale(s->scale_factor);
+	s->translate = mat_translate(s->move_fac);
+	s->trans_cent = mat_translate(s->object_center);
+	s->trans_back = mat_translate(s->object_back);
+	if (s->enable_rotate == 1)
+		s->rotate_x = mat_rotate(s->rot_a_fac, vec3_set(0.0f, 1.0f, 0.0f));
+	else if (s->enable_rotate == -1)
 	{
-		if (scop->copy_auto == 1)
+		if (s->copy_auto == 1)
 		{
-			scop->rot_x_fac = scop->rot_a_fac;
-			scop->copy_auto = -1;
+			s->rot_x_fac = s->rot_a_fac;
+			s->copy_auto = -1;
 		}
-		scop->rotate_x = mat_rotate(scop->rot_x_fac, vec3_set(0.0f, 1.0f, 0.0f));
+		s->rotate_x = mat_rotate(s->rot_x_fac, vec3_set(0.0f, 1.0f, 0.0f));
 	}
-	scop->rotate_y = mat_rotate(scop->rot_y_fac, vec3_set(1.0f, 0.0f, 0.0f));
-	scop->rotate_z = mat_rotate(scop->rot_z_fac, vec3_set(0.0f, 0.0f, 1.0f));
+	s->rotate_y = mat_rotate(s->rot_y_fac, vec3_set(1.0f, 0.0f, 0.0f));
+	s->rotate_z = mat_rotate(s->rot_z_fac, vec3_set(0.0f, 0.0f, 1.0f));
 }
 
 t_mat4		mat_scale(float scale_factor)
@@ -48,8 +60,8 @@ t_mat4		mat_translate(t_vec3 v)
 
 t_mat4		mat_rotate(float angle, t_vec3 axis)
 {
-	float c;
-	float s;
+	float	c;
+	float	s;
 
 	c = cosf(angle * M_PI / 180.0f);
 	s = sinf(angle * M_PI / 180.0f);

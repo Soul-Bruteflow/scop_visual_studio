@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_matrix.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvlad <thelarion@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/27 13:50:30 by mvlad             #+#    #+#             */
+/*   Updated: 2019/03/27 13:50:30 by mvlad            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "scop.h"
 
-void		main_matrix(t_scop *scop)
+void	main_matrix(t_scop *scop)
 {
 	set_view(scop);
 	set_projection(scop);
@@ -12,14 +24,14 @@ void		main_matrix(t_scop *scop)
 	glUseProgram(0);
 }
 
-void		set_view(t_scop *scop)
+void	set_view(t_scop *scop)
 {
 	scop->up = vec3_set(0.0f, 1.0f, 0.0f);
 	scop->center = vec3_set(0.0f, 0.0f, 0.0f);
 	scop->view = mat_build_view(scop->eye, scop->center, scop->up);
 }
 
-void		set_projection(t_scop *scop)
+void	set_projection(t_scop *scop)
 {
 	scop->fov = 90.0f;
 	scop->near = 0.01f;
