@@ -60,13 +60,13 @@ void			send_texture_to_opengl(t_scop *scop, int n)
 	glBindTexture(GL_TEXTURE_2D, scop->t[n].gl_id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, scop->t[n].tga_width,
 				scop->t[n].tga_height, 0, GL_RGB, GL_UNSIGNED_BYTE,
-				scop->t[n].tga_image_data);
+				scop->t[n].img_data);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 	glUniform1i(glGetUniformLocation(scop->shdr_prog, scop->t[n].gl_name), 0);
-	free(scop->t[n].tga_image_data);
+	free(scop->t[n].img_data);
 	glActiveTexture(0);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

@@ -51,72 +51,47 @@ void				generate_file_names(t_scop *scop)
 	scop->t[9].gl_name = TGA_GL_10;
 }
 
-int					load_tga(t_scop *scop, int n)
+int					load_tga(t_scop *s, int n)
 {
 	FILE			*file_ptr;
-	unsigned char	uchar_bad;
-	short int		sint_bad;
-	int				color_mode;
-	unsigned char	color_swap;
 
-	// Open the TGA file.
-	file_ptr = fopen(scop->t[n].filename, "rb");
+	file_ptr = fopen(s->t[n].filename, "rb");
 	if (file_ptr == NULL)
-	{
 		return (0);
-	}
-
-	// Read the two first bytes we don't need.
-	fread(&uchar_bad, sizeof(unsigned char), 1, file_ptr);
-	fread(&uchar_bad, sizeof(unsigned char), 1, file_ptr);
-
-	// Which type of image gets stored in imageTypeCode.
-	fread(&scop->t[n].tga_type_code, sizeof(unsigned char), 1, file_ptr);
-
-	// For our purposes, the type code should be 2 (uncompressed RGB image)
-	// or 3 (uncompressed black-and-white images).
-	if (scop->t[n].tga_type_code != 2 && scop->t[n].tga_type_code != 3)
+	fread(&s->uchar_bad, sizeof(unsigned char), 1, file_ptr);
+	fread(&s->uchar_bad, sizeof(unsigned char), 1, file_ptr);
+	fread(&s->t[n].tga_type_code, sizeof(unsigned char), 1, file_ptr);
+	if (s->t[n].tga_type_code != 2 && s->t[n].tga_type_code != 3)
 	{
 		fclose(file_ptr);
 		return (0);
 	}
-
-	// Read 13 bytes of data we don't need.
-	fread(&sint_bad, sizeof(short int), 1, file_ptr);
-	fread(&sint_bad, sizeof(short int), 1, file_ptr);
-	fread(&uchar_bad, sizeof(unsigned char), 1, file_ptr);
-	fread(&sint_bad, sizeof(short int), 1, file_ptr);
-	fread(&sint_bad, sizeof(short int), 1, file_ptr);
-
-	// Read the image's width and height.
-	fread(&scop->t[n].tga_width, sizeof(short int), 1, file_ptr);
-	fread(&scop->t[n].tga_height, sizeof(short int), 1, file_ptr);
-
-	// Read the bit depth.
-	fread(&scop->t[n].tga_bit_count, sizeof(unsigned char), 1, file_ptr);
-
-	// Read one byte of data we don't need.
-	fread(&uchar_bad, sizeof(unsigned char), 1, file_ptr);
-
-	// Color mode -> 3 = BGR, 4 = BGRA.
-	color_mode = scop->t[n].tga_bit_count / 8;
-	scop->t[n].tga_image_size = scop->t[n].tga_width * scop->t[n].tga_height * color_mode;
-
-	// Allocate memory for the image data.
-	scop->t[n].tga_image_data = (unsigned char*)malloc(sizeof(unsigned char) * scop->t[n].tga_image_size);
-
-	// Read the image data.
-	fread(scop->t[n].tga_image_data, sizeof(unsigned char), scop->t[n].tga_image_size, file_ptr);
-
-	// Change from BGR to RGB so OpenGL can read the image data.
-	scop->t[n].i = 0;
-	while (scop->t[n].i < scop->t[n].tga_image_size)
+	calculate_tga_data(s, n, file_ptr);
+	s->t[n].i = 0;
+	while (s->t[n].i < s->t[n].img_sz)
 	{
-		color_swap = scop->t[n].tga_image_data[scop->t[n].i];
-		scop->t[n].tga_image_data[scop->t[n].i] = scop->t[n].tga_image_data[scop->t[n].i + 2];
-		scop->t[n].tga_image_data[scop->t[n].i + 2] = color_swap;
-		scop->t[n].i += color_mode;
+		s->color_swap = s->t[n].img_data[s->t[n].i];
+		s->t[n].img_data[s->t[n].i] = s->t[n].img_data[s->t[n].i + 2];
+		s->t[n].img_data[s->t[n].i + 2] = s->color_swap;
+		s->t[n].i += s->color_mode;
 	}
 	fclose(file_ptr);
 	return (1);
+}
+
+int					calculate_tga_data(t_scop *s, int n, FILE *file_ptr)
+{
+	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
+	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
+	fread(&s->uchar_bad, sizeof(unsigned char), 1, file_ptr);
+	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
+	fread(&s->sint_bad, sizeof(short int), 1, file_ptr);
+	fread(&s->t[n].tga_width, sizeof(short int), 1, file_ptr);
+	fread(&s->t[n].tga_height, sizeof(short int), 1, file_ptr);
+	fread(&s->t[n].tga_bit_count, sizeof(unsigned char), 1, file_ptr);
+	fread(&s->uchar_bad, sizeof(unsigned char), 1, file_ptr);
+	s->color_mode = s->t[n].tga_bit_count / 8;
+	s->t[n].img_sz = s->t[n].tga_width * s->t[n].tga_height * s->color_mode;
+	s->t[n].img_data = (Uchar*)malloc(sizeof(Uchar) * s->t[n].img_sz);
+	fread(s->t[n].img_data, sizeof(unsigned char), s->t[n].img_sz, file_ptr);
 }

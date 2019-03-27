@@ -63,6 +63,7 @@
 # define TGA_GL_9		"tex_9"
 # define TGA_GL_10		"tex_10"
 # define PROFILE_CORE	0x0001
+typedef	unsigned char	Uchar;
 
 /*
 ** Math structs
@@ -85,8 +86,8 @@ typedef struct			s_tex
 	short int			tga_width;
 	short int			tga_height;
 	unsigned char		tga_bit_count;
-	unsigned char		*tga_image_data;
-	long				tga_image_size;
+	unsigned char		*img_data;
+	long				img_sz;
 	unsigned int		i;
 	char				*filename;
 	char				*gl_name;
@@ -188,6 +189,14 @@ typedef struct			s_scop
 	t_tex				t[TEX_COUNT];
 	int					cur_tex_num;
 	t_vec3				bgrd_col;
+	unsigned char		uchar_bad;
+	short int			sint_bad;
+	int					color_mode;
+	unsigned char		color_swap;
+	int					fd;
+	char				*line;
+	int					cap;
+	int					cap2;
 }						t_scop;
 
 /*
@@ -320,6 +329,7 @@ void					generate_random_colors(t_scop *scop);
 ** Load tga
 */
 int						load_tga(t_scop *scop, int n);
+int						calculate_tga_data(t_scop *s, int n, FILE *file_ptr);
 void					send_texture_to_opengl(t_scop *scop, int n);
 int						load_all_tga(t_scop *scop);
 void					generate_file_names(t_scop *scop);

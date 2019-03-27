@@ -24,30 +24,27 @@ int			obj_pars_main(t_scop *scop)
 
 int			read_wtire_v_f(t_scop *s)
 {
-	int		fd;
-	char	*line;
-	int		cap;
-	int		cap2;
-
-	cap = 3;
-	cap2 = 6;
+	s->cap = 3;
+	s->cap2 = 6;
 	s->vert_num = 0;
 	s->indic_num = 0;
-	if ((fd = open(s->obj_file_name, O_RDONLY)) < 0)
+	if ((s->fd = open(s->obj_file_name, O_RDONLY)) < 0)
 		return (-1);
-	s->verts = (float*)malloc(sizeof(float) * cap);
-	s->indic = (unsigned int*)malloc(sizeof(unsigned int) * cap2);
-	while (get_next_line(fd, &line) == 1)
+	s->verts = (float*)malloc(sizeof(float) * s->cap);
+	s->indic = (unsigned int*)malloc(sizeof(unsigned int) * s->cap2);
+	while (get_next_line(s->fd, &s->line) == 1)
 	{
-		if (line[0] == 'v' && line[1] == ' ')
-			cap = vertices_write(s, cap, line);
-		else if (line[0] == 'f' && line[1] == ' ')
-			cap2 = indices_write(s, cap2, line);
-		free(line);
+		if (s->line[0] == 'v' && s->line[1] == ' ')
+			s->cap = vertices_write(s, s->cap, s->line);
+		else if (s->line[0] == 'f' && s->line[1] == ' ')
+			s->cap2 = indices_write(s, s->cap2, s->line);
+		free(s->line);
 	}
+	if (s->vert_num == 0 || s->vert_num < 9 || s->indic_num == 0)
+		return (-1);
 	s->verts = (float*)realloc(s->verts, s->vert_num * sizeof(float));
 	s->indic = (Uint32*)realloc(s->indic, s->indic_num * sizeof(Uint32));
-	close(fd);
+	close(s->fd);
 	return (1);
 }
 
